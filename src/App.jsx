@@ -1,11 +1,17 @@
+
+
 import { useState, useEffect } from "react";
 import "./App.css";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
-function App() {
-  const [count, setCount] = useState(0);
 
+
+const App = () => {
   return (
+
+    <div>App</div>
+  )
+
     <>
       <BrowserRouter>
         <Routes>
@@ -19,6 +25,7 @@ function App() {
       </BrowserRouter>
     </>
   );
+
 }
 
-export default App;
+export default App
