@@ -2,7 +2,12 @@ import React from 'react'
 
 const samira2 = () => {
   return (
-    <div>samira2</div>
+    <div>
+        samira2<p>
+        samira3
+        </p>
+        </div>
+    
   )
 }
 
