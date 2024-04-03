@@ -1,10 +1,5 @@
-
-
-import { useState, useEffect } from "react";
-import "./App.css";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-
-
+import Home from "./pages/Home";
 
 const App = () => {
   return (
@@ -12,16 +7,15 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />}>
-            <Route path="/"  />
-            <Route path="/"  />
-            <Route path="/"  />
-            <Route path="/"  />
+            <Route path="/" />
+            <Route path="/" />
+            <Route path="/" />
+            <Route path="/" />
           </Route>
         </Routes>
       </BrowserRouter>
     </>
   );
+};
 
-}
-
-export default App
+export default App;
