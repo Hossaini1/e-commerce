@@ -14,6 +14,8 @@ export function ParentContext({ children }) {
   return <Context.Provider value={{}}>{children}</Context.Provider>;
 }
 
-const store = () => useContext(Context);
+const Store = () => useContext(Context);
+   
 
-export default store;
+
+export default Store;
