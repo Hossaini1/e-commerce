@@ -1,8 +1,11 @@
+
 import { Routes, Route, BrowserRouter, Outlet } from "react-router-dom";
 import Home from "./pages/Home";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Carousel from "./components/Carousel";
+import AllListItems from "./pages/AllListItems";
+
 
 const App = () => {
   const slides = [
@@ -17,17 +20,16 @@ const App = () => {
       <Header />
       <Main />
 
-      <div>
+<div>
         <Carousel slides={slides} />
       </div>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="" />
-          <Route path="" />
-          <Route path="" />
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/listitems" element={<AllListItems />} />
+        <Route path="" />
+        <Route path="" />
+      </Routes>
+
     </>
   );
 };

@@ -1,0 +1,98 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #2D2D2D; 
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+  }
+  
+  .navbar {
+    background-color:#575656;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    min-height: 70px;
+  }
+
+  .navMenu {
+    display: flex;
+    align-items: center;
+    gap: 90px;
+  }
+  
+  .navLink {
+    color:  #e9e4e4; 
+  }
+  
+  .searchInput {
+    background-color: #2c2c2c;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    width: 400px;
+    height: 30px;
+    text-align: center; 
+  }
+  
+  @media screen and (max-width: 780px) {
+    .hamburger {
+      display: block;
+      cursor: pointer;
+    }
+  
+    .bar {
+      background-color:#D01345;
+      width: 20px;
+      height: 3px;
+      display: block;
+      margin: 5px;
+      -webkit-transition: 0.3s ease-in-out;
+      transition: 0.3s ease-in-out;
+    }
+  
+    .hamburger.active .bar:nth-child(2){
+      opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+      transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  
+    .navMenu{
+      position: absolute;
+      flex-direction: column;
+      gap: 0;
+      top: 70px;
+      left: -100%;
+      text-align: center; 
+      width: 100%;
+      transition: 0.7s ease-in-out;
+      background-color: #8b8888;
+      padding: 10px;
+    }
+  
+    .navMenu.active{
+      left: 0;
+    }
+  
+    .navMenu li {
+      margin: 16px 0;
+    }
+  }
+  
