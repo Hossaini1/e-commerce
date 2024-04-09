@@ -30,10 +30,10 @@ const data = [
         }
 ];
 const CarouselDunne = () => {
- const {settings}=Store()
+ const {settings,handleClickToSeeMore }=Store()
     return (
       <div className=" w-3/4 m-auto">
-          <div className="mt-30 rounded-xl" >
+          <div className="mt-30 rounded-xl text-center" >
           <p className="text-center text-primary">Trending</p>
           <Slider {...settings}>
               {data.map((item, index) => (
@@ -48,6 +48,13 @@ const CarouselDunne = () => {
                   </div>
               ))}
             </Slider>
+
+       <button
+       className="text-center bg-tertiary text-primaryDark px-3 py-2 font-bold rounded-t-2xl "
+       onClick={handleClickToSeeMore}
+     >
+       See more
+     </button> 
           </div>
       </div>
     );
