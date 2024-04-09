@@ -14,6 +14,7 @@ const Main = () => {
     "https://i.ibb.co/yg7BSdM/4.png",
   ];
 
+
   return (
     <main className="grid grid-cols-4">
       <Sidebar />
@@ -21,6 +22,19 @@ const Main = () => {
       <CarouselDunne />
 
       <Outlet />
+
+
+         
+     
+
+        <button
+          className="text-center bg-tertiary text-primaryDark px-3 py-2 font-bold rounded-t-2xl "
+          onClick={handleClickToSeeMore}
+        >
+          See more
+        </button>
+    
+
 
       {/* <button
         className="text-center bg-tertiary text-primaryDark px-3 py-2 font-bold rounded-t-2xl "
