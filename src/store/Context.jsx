@@ -12,9 +12,17 @@ export function ParentContext({ children }) {
   const handleClickToSeeMore = () => {
     navigate("/listitems");
   };
+  //object setting für slider
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 800,
+    slidesToShow: 5,
+    slidesToScroll: 3
+  };
 
   return (
-    <Context.Provider value={{ handleClickToSeeMore }}>
+    <Context.Provider value={{ handleClickToSeeMore,settings }}>
       {children}
     </Context.Provider>
   );

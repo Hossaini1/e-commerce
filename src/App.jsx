@@ -12,6 +12,7 @@ import Main from "./components/Main";
 
 import Carousel from "./components/Carousel";
 import AllListItems from "./pages/AllListItems";
+import CarouselDunne from "./components/CarouselDunne";
 
 
 
@@ -30,6 +31,10 @@ const App = () => {
 
       <Header />
       <Main />
+
+    
+      <CarouselDunne/>
+      
         <Carousel slides={slides} />
      
       <Routes>
