@@ -25,7 +25,7 @@ export default function Carousel({ slides }) {
   };
 
   return (
-    <div className="col-span-3">
+    
       <div className="flex justify-center m-24">
         <div
           className="grid bg-secondaryDark grid-cols-1 lg:grid-cols-2"
@@ -74,6 +74,6 @@ export default function Carousel({ slides }) {
           </div>
         </div>
       </div>
-    </div>
+    
   );
 }

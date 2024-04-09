@@ -3,7 +3,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Store from "../store/Context";
 const data = [
-    
         {
           "img": "https://fastly.picsum.photos/id/7/4728/3168.jpg?hmac=c5B5tfYFM9blHHMhuu4UKmhnbZoJqrzNOP9xjkV4w3o",
           "name": "Produkt 1",
@@ -34,14 +33,13 @@ const CarouselDunne = () => {
  const {settings}=Store()
     return (
       <div className=" w-3/4 m-auto">
-            
           <div className="mt-30 rounded-xl" >
           <p className="text-center text-primary">Trending</p>
           <Slider {...settings}>
-              {data.map((item, index) => ( 
+              {data.map((item, index) => (
                   <div key={index} className="  h-50   ">
                       <div className=" flex justify-center items-center  bg-primary ">
-                          <img src={item.img} alt="" className=" lg:w-72 w-40 bg-cover "/> 
+                          <img src={item.img} alt="" className=" lg:w-72 w-40 bg-cover "/>
                       </div>
                       <div className="flex flex-col justify-center items-center gap-4  bg-secondary text-primary   text-sm  opacity-30">
                           <p>{item.name}</p>
@@ -54,5 +52,4 @@ const CarouselDunne = () => {
       </div>
     );
   };
-  
-  export default CarouselDunne; 
+  export default CarouselDunne;

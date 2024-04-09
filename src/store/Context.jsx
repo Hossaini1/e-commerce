@@ -14,7 +14,7 @@ export function ParentContext({ children }) {
   };
   //object setting für slider
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 800,
     slidesToShow: 5,
