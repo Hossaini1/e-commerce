@@ -10,11 +10,10 @@ const Main = () => {
   const { handleClickToSeeMore } = Store();
 
   return (
-<>
-      <Sidebar />
-   
-
     
+    <>
+      <Sidebar />
+  
       <Outlet />
       <main className="text-center ">
         <button
