@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 const pages = [
   { title: "CATEGORIES" },
   { title: "Kleider & Röcke", path: "/kleider " },
@@ -11,19 +12,19 @@ const pages = [
 
 const Sidebar = () => {
   return (
-    <Sidebar className="bg-secondaryDark  text-primaryDark  w-64 p-10 my-[5rem] mx-10 flex flex-col col-span-1">
-      <div className="p-1 "></div>
+    <div className="bg-secondaryDark  text-primaryDark  w-64 p-10 my-[5rem] mx-10 flex flex-col col-span-1">
+      
 
       <ul className="flex-2  ">
         {pages.map((page, index) => (
           <li key={index} className="p-5 hover:bg-tertiary">
-            <a className="" href={page.path}>
+            <NavLink >
               {page.title}
-            </a>
+            </NavLink>
           </li>
         ))}
       </ul>
-    </Sidebar>
+    </div>
   );
 };
 

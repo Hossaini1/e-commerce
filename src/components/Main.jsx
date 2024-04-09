@@ -14,34 +14,25 @@ const Main = () => {
     "https://i.ibb.co/yg7BSdM/4.png",
   ];
 
-
   return (
-    <main className="grid grid-cols-4">
-      <Sidebar />
-      <Carousel slides={slides} />
-      <CarouselDunne />
+    <main >
+      <div className=" flex ">
+        <div ><Sidebar /></div>
+        <div ><Carousel slides={slides} /></div>
+      </div>
 
-      <Outlet />
+      <div >
+        <CarouselDunne />
+      </div>
 
-
-         
-     
-
-        <button
-          className="text-center bg-tertiary text-primaryDark px-3 py-2 font-bold rounded-t-2xl "
-          onClick={handleClickToSeeMore}
-        >
-          See more
-        </button>
-    
-
-
+      
       {/* <button
-        className="text-center bg-tertiary text-primaryDark px-3 py-2 font-bold rounded-t-2xl "
-        onClick={handleClickToSeeMore}
-      >
-        See more
-      </button> */}
+       className="text-center bg-tertiary text-primaryDark px-3 py-2 font-bold rounded-t-2xl "
+       onClick={handleClickToSeeMore}
+     >
+       See more
+     </button>  */}
+     {/* <Outlet /> */}
     </main>
   );
 };

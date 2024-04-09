@@ -6,7 +6,7 @@
   img,
   video {
     height: initial;
-    width: initial;
+    
   }
 }
 .slick-slide > div {
