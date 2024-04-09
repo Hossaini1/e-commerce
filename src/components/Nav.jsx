@@ -32,7 +32,7 @@ function Nav() {
     <div className="App">
     <header className="App-header">
       <nav className={`${styles.navbar}`}>
-      <img src={logo} alt="Logo" className={`${styles.logo}`} 
+      <img  src={logo} alt="Logo" className={`${styles.logo}`} 
           style={{ width: '170px', height: '70px', marginLeft: '70px' }}
       />
 
