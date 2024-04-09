@@ -28,7 +28,7 @@ export default function Carousel({ slides }) {
     <div className="flex justify-center m-24">
       <div
         className="grid bg-secondaryDark grid-cols-1 lg:grid-cols-2"
-        style={{ height: "50rem", width: "80%" }}
+        style={{ height: "39rem", width: "80%" }}
       >
         <div className="bg-secondaryDark text-primary self-center m-5">
           <h1 className="text-2xl m-2">Big Sale 20%</h1>
