@@ -1,9 +1,23 @@
-import { createContext,  useContext } from "react";
+
+import { createContext, useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 const Context = createContext();
 
 export function ParentContext({ children }) {
-  return <Context.Provider value={{}}>{children}</Context.Provider>;
+  
+  // UseNavigate für AllListItems Komponente
+  const navigate = useNavigate();
+  const handleClickToSeeMore = () => {
+    navigate("/listitems");
+  };
+
+  return (
+    <Context.Provider value={{ handleClickToSeeMore }}>
+      {children}
+    </Context.Provider>
+  );
 }
 
 const Store = () => useContext(Context);
