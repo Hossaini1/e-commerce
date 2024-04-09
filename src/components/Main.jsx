@@ -1,11 +1,20 @@
 import { Outlet } from "react-router-dom";
+
+import Sidebar from "./Sidebar";
+
+
 import Store from "../store/Context";
+
 
 const Main = () => {
   const { handleClickToSeeMore } = Store();
 
   return (
-    <>
+<>
+      <Sidebar />
+   
+
+    
       <Outlet />
       <main className="text-center ">
         <button
@@ -14,8 +23,9 @@ const Main = () => {
         >
           See more
         </button>
-      </main>
+      
     </>
+
   );
 };
 export default Main;
