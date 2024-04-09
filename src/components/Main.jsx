@@ -1,10 +1,13 @@
-import {Outlet} from 'react-router-dom'
+import { Outlet } from "react-router-dom";
+import Sidebar from "./Sidebar";
+
 
 const Main = () => {
   return (
     <main>
-<Outlet />
+      <Sidebar />
+      <Outlet />
     </main>
-  )
-}
-export default Main
+  );
+};
+export default Main;
