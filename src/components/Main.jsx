@@ -14,6 +14,7 @@ const Main = () => {
         >
           See more
         </button>
+        
       </main>
     </>
   );

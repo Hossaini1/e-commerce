@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import Carousel from "./components/Carousel";
 import AllListItems from "./pages/AllListItems";
+import CarouselDunne from "./components/CarouselDunne";
 
 
 const App = () => {
@@ -19,10 +20,11 @@ const App = () => {
     <>
       <Header />
       <Main />
-
-<div>
+      <div>
         <Carousel slides={slides} />
       </div>
+      <CarouselDunne/>
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/listitems" element={<AllListItems />} />
