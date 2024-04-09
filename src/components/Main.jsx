@@ -12,8 +12,9 @@ const Main = () => {
   const { handleClickToSeeMore } = Store();
 
   return (
-    <>
-      <Sidebar />
+
+<>
+      <Sidebar />    
 
       <Outlet />
    
@@ -23,6 +24,8 @@ const Main = () => {
         >
           See more
         </button>
+    
+
       
     </>
   );
