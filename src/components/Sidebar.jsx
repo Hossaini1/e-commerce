@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 
@@ -25,7 +25,7 @@ const Sidebar = () => {
             key={index}
             className=" p-4 my-5 text-center cursor-pointer transition ease-out duration-500 hover:shadow-inner-tertiary transform hover:scale-110 hover:bg-tertiary rounded-lg shadow-[0_0_10px]   "
           >
-            <NavLink>{page.title}</NavLink>
+            <Link to={page.path}>{page.title}</Link>
           </li>
         ))}
       </ul>

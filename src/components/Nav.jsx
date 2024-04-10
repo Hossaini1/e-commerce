@@ -6,6 +6,8 @@ import { faUser } from '@fortawesome/free-regular-svg-icons';
 import styles from '../styles/Nav.module.css';
 import logo from '../images/haupt.png';
 
+import { Link} from 'react-router-dom';
+
 function Nav() {
   const [isActive, setIsActive] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -31,12 +33,12 @@ function Nav() {
     <div className="App">
       <header className="App-header">
         <nav className={`${styles.navbar}`}>
-          <img
+          <Link to={'/'}><img
             src={logo}
             alt="Logo"
             className={`${styles.logo}`}
             style={{ width: '170px', height: '70px', marginLeft: '70px' }}
-          />
+          /></Link>
 
           <ul className={`${styles.navMenu} ${isActive ? styles.active : ''}`}>
             <li onClick={removeActive}>
@@ -53,13 +55,13 @@ function Nav() {
 
             <li onClick={removeActive} style={{ marginLeft: 'auto', marginRight: '-30%' }}>
               <div className={`${styles.navLink}`}>
-                <FontAwesomeIcon icon={faUser} />
+              <Link to={'/login'}><FontAwesomeIcon icon={faUser} /></Link>  
               </div>
             </li>
 
             <li onClick={removeActive} style={{ marginLeft: 'auto', marginRight: '-30%' }}>
               <div className={`${styles.navLink}`}>
-                <FontAwesomeIcon icon={faHeart} />
+                <Link to={'/favorite'}><FontAwesomeIcon icon={faHeart} /></Link>
               </div>
             </li>
 
@@ -77,6 +79,7 @@ function Nav() {
           </div>
         </nav>
       </header>
+     
     </div>
   );
 }
