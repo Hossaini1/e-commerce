@@ -37,8 +37,13 @@ function Nav() {
             src={logo}
             alt="Logo"
             className={`${styles.logo}`}
+
             style={{ width: '170px', height: '70px', marginLeft: '70px' }}
           /></Link>
+
+            style={{ width: '170px', height: '70px', marginLeft: '100px' }}
+          />
+
 
           <ul className={`${styles.navMenu} ${isActive ? styles.active : ''}`}>
             <li onClick={removeActive}>

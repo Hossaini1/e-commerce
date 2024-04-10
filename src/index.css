@@ -10,5 +10,16 @@
 }
 
 .slick-slide > div {
+
   margin: 0 10px;
+
+ 
+}
+.icon {
+  transition: transform 0.2s ease-in-out; 
+}
+
+.icon:hover {
+  transform: scale(1.5); 
+
 }
