@@ -26,7 +26,7 @@ const Main = () => {
         <CarouselDunne />
       </div>
 
-      {/* <Outlet /> */}
+     
     </main>
   );
 };
