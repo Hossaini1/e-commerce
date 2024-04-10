@@ -6,6 +6,8 @@ import { faUser } from '@fortawesome/free-regular-svg-icons';
 import styles from '../styles/Nav.module.css';
 import logo from '../images/haupt.png';
 
+import { Link} from 'react-router-dom';
+
 function Nav() {
   const [isActive, setIsActive] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');

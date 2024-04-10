@@ -4,12 +4,6 @@ import {
   BsFillArrowLeftCircleFill,
 } from "react-icons/bs";
 
-/* const slides = [
-  "https://i.ibb.co/ncrXc2V/1.png",
-  "https://i.ibb.co/B3s7v4h/2.png",
-  "https://i.ibb.co/XXR8kzF/3.png",
-  "https://i.ibb.co/yg7BSdM/4.png",
-]; */
 
 export default function Carousel({ slides }) {
   let [current, setCurrent] = useState(0);
@@ -34,9 +28,9 @@ export default function Carousel({ slides }) {
           className="bg-tertiary text-primary self-center m-5 text-center rounded-xl shadow-2xl pt-24"
           style={{ height: "35rem" }}
         >
-          <h1 className="text-8xl m-2">SALES</h1>
-          <h3 className="text-4xl m-2 pt-10">Up to</h3>
-          <h5 className="text-8xl m-2 pt-10">50%</h5>
+          <h1 className="text-8xl m-2 font-bold">SALES</h1>
+          <h3 className="text-4xl m-2 pt-10 font-semibold">Up to</h3>
+          <h5 className="text-8xl m-2 pt-10 font-extrabold">50%</h5>
         </div>
         <div className="overflow-hidden relative rounded-xl shadow-2xl m-10">
           <div
@@ -45,8 +39,8 @@ export default function Carousel({ slides }) {
               transform: `translateX(-${current * 100}%)`,
             }}
           >
-            {slides.map((s) => {
-              return <img src={s} className="object-contain" />;
+            {slides.map((s,index) => {
+              return <img key={index} src={s} />;
             })}
           </div>
 

@@ -1,24 +1,47 @@
-import { Routes, Route, Link} from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
+import Main from "./Main";
+import Header from "./Header";
 import AllListItems from "../pages/AllListItems";
+import Login from "../pages/Login";
+import Favorite from "../pages/Favorite";
+import CartShopping from "../pages/CartShopping";
+import BlousesShirts from "../pages/BlousesShirts";
+import DressesSkirts from "../pages/DressesSkirts";
+import MaternityClothes from "../pages/MaternityClothes";
+import PantsJeans from "../pages/PantsJeans";
+import Register from "../pages/Register";
+import Shoes from "../pages/Shoes";
+import TshirtsTops from "../pages/TshirtsTops";
+import WomensJacke from "../pages/WomensJacke";
+
+
 const Router = () => {
 
-    const links =[
-    {
-path:'',
-element:''
-    },
-]
 
   return (
     <>
-    <Link to={'/listitems'}></Link>
-
-    <Routes>
+      <Routes>
+        
+        <Route path="/" element={<Header />}>
+        <Route index element={<Main />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/favorite"element={<Favorite />} />
+        <Route path="/cartshopping" element={<CartShopping />} />
+        <Route path="/listitems" element={<AllListItems />} />
+        <Route path="/blouseshirts" element={<BlousesShirts />} />
+        <Route path="/cartshopping" element={<CartShopping />} />
+        <Route path="/dressesskirts" element={<DressesSkirts />} />
+        <Route path="/maternityclothes" element={<MaternityClothes />} />
+        <Route path="/pantsjeans" element={<PantsJeans />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/shoes" element={<Shoes />} />
+        <Route path="/tshirtstops" element={<TshirtsTops />} />
+        <Route path="/womensjacke" element={<WomensJacke />} />
+        </Route>
        
-        <Route path="/" element={<AllListItems />} />
-      
-      </Routes> 
+       
+      </Routes>
     </>
-  )
-}
-export default Router
+  );
+};
+export default Router;
