@@ -4,8 +4,6 @@ import Carousel from "./Carousel";
 import CarouselDunne from "./CarouselDunne";
 
 const Main = () => {
-  
-
   const slides = [
     "https://i.ibb.co/ncrXc2V/1.png",
     "https://i.ibb.co/B3s7v4h/2.png",
@@ -15,7 +13,7 @@ const Main = () => {
 
   return (
     <main>
-      <div className="grid grid-cols-5">
+      <div className="grid lg:grid-cols-5 md:grid-cols-1 sm:grid-cols-1">
         <div className="col-span-1">
           <Sidebar />
         </div>
