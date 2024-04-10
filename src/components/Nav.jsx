@@ -41,8 +41,8 @@ function Nav() {
             style={{ width: '170px', height: '70px', marginLeft: '70px' }}
           /></Link>
 
-            style={{ width: '170px', height: '70px', marginLeft: '100px' }}
-          />
+           
+         
 
 
           <ul className={`${styles.navMenu} ${isActive ? styles.active : ''}`}>
@@ -72,7 +72,7 @@ function Nav() {
 
             <li onClick={removeActive} style={{ marginLeft: 'auto', marginRight: '-30%' }}>
               <div className={`${styles.navLink}`}>
-                <FontAwesomeIcon icon={faCartShopping} />
+               <Link to={'/cartshopping'}> <FontAwesomeIcon icon={faCartShopping} /></Link>
               </div>
             </li>
           </ul>
