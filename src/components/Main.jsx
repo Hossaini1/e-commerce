@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Carousel from "./Carousel";
 import CarouselDunne from "./CarouselDunne";
+import Footer from "./Footer";
 
 const Main = () => {
   
@@ -25,7 +26,10 @@ const Main = () => {
       </div>
 
       <div>
-        <CarouselDunne />
+        <CarouselDunne/>
+      </div>
+      <div>
+        <Footer/>
       </div>
 
       {/* <Outlet /> */}
