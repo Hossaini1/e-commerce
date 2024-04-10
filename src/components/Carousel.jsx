@@ -25,15 +25,18 @@ export default function Carousel({ slides }) {
   };
 
   return (
-    <div className="flex justify-center m-24">
+    <div className="flex justify-center mt-24">
       <div
-        className="grid bg-secondaryDark grid-cols-1 lg:grid-cols-2"
-        style={{ height: "39rem", width: "80%" }}
+        className="grid bg-secondaryDark lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1"
+        style={{ height: "40rem", width: "80%" }}
       >
-        <div className="bg-secondaryDark text-primary self-center m-5">
-          <h1 className="text-2xl m-2">Big Sale 20%</h1>
-          <h3 className="text-2xl m-2">PAVAWS</h3>
-          <h5 className="text-2xl m-2">Shop</h5>
+        <div
+          className="bg-tertiary text-primary self-center m-5 text-center rounded-xl shadow-2xl pt-24"
+          style={{ height: "35rem" }}
+        >
+          <h1 className="text-8xl m-2">SALES</h1>
+          <h3 className="text-4xl m-2 pt-10">Up to</h3>
+          <h5 className="text-8xl m-2 pt-10">50%</h5>
         </div>
         <div className="overflow-hidden relative rounded-xl shadow-2xl m-10">
           <div
@@ -43,7 +46,7 @@ export default function Carousel({ slides }) {
             }}
           >
             {slides.map((s) => {
-              return <img src={s} />;
+              return <img src={s} className="object-contain" />;
             })}
           </div>
 
