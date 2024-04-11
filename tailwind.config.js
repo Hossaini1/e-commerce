@@ -13,6 +13,10 @@ export default {
         
       },
     extend: {
+      screens:{
+        "sm":"360px",
+        "md":"960px"
+      }
     
     },
   },

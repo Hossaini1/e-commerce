@@ -1,12 +1,11 @@
-
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 
 const Context = createContext();
 
 export function ParentContext({ children }) {
-  
+
   // UseNavigate für AllListItems Komponente
   const navigate = useNavigate();
   const handleClickToSeeMore = () => {
@@ -18,11 +17,26 @@ export function ParentContext({ children }) {
     infinite: true,
     speed: 800,
     slidesToShow: 5,
-    slidesToScroll: 3
+    slidesToScroll: 3,
   };
+  // pages link und toggle categories für sidebar
+ 
+
+  
 
   return (
-    <Context.Provider value={{ handleClickToSeeMore,settings }}>
+    <Context.Provider
+      value={{
+        handleClickToSeeMore,
+        settings,
+        showCategories,
+        setShowCategories,
+        pages,
+        h2Content,
+        toggleCategories,
+        resize
+      }}
+    >
       {children}
     </Context.Provider>
   );
