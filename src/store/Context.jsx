@@ -29,12 +29,8 @@ export function ParentContext({ children }) {
       value={{
         handleClickToSeeMore,
         settings,
-        showCategories,
-        setShowCategories,
-        pages,
-        h2Content,
-        toggleCategories,
-        resize
+        
+     
       }}
     >
       {children}
