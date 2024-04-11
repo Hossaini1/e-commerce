@@ -3,10 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 
+import { Link} from 'react-router-dom';
+
 import styles from '../styles/Nav.module.css';
 import logo from '../images/haupt.png';
 
-import { Link} from 'react-router-dom';
 
 function Nav() {
   const [isActive, setIsActive] = useState(false);
@@ -26,6 +27,7 @@ function Nav() {
     
   };
 
+
   return (
     <nav className={styles.navbar}>
       <img src={logo} alt="Logo" className={styles.logo} />
@@ -42,17 +44,20 @@ function Nav() {
             />
           </form>
         </li>
+
         <div className={styles.iconContainer}>
-          <li onClick={toggleActiveClass}>
-            <div className={styles.navLink}>
+        <li>
+            <Link to="/login" className={styles.navLink}> 
               <FontAwesomeIcon icon={faUser} />
-            </div>
+            </Link>
           </li>
+
           <li onClick={toggleActiveClass}>
             <div className={styles.navLink}>
               <FontAwesomeIcon icon={faHeart} />
             </div>
           </li>
+          
           <li onClick={toggleActiveClass}>
             <div className={styles.navLink}>
               <FontAwesomeIcon icon={faCartShopping} />
