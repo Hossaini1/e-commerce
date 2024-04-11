@@ -20,7 +20,7 @@ export default function Carousel({ slides }) {
   return (
     <div className="flex justify-center mt-24">
       <div
-        className="grid bg-primaryDark lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1"
+        className="grid bg-primary lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1"
         style={{ height: "40rem", width: "90%" }}
       >
         <div
