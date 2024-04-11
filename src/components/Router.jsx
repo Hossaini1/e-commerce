@@ -13,6 +13,7 @@ import Register from "../pages/Register";
 import Shoes from "../pages/Shoes";
 import TshirtsTops from "../pages/TshirtsTops";
 import WomensJacke from "../pages/WomensJacke";
+import Error from "../pages/Error";
 
 
 const Router = () => {
@@ -37,6 +38,7 @@ const Router = () => {
         <Route path="/shoes" element={<Shoes />} />
         <Route path="/tshirtstops" element={<TshirtsTops />} />
         <Route path="/womensjacke" element={<WomensJacke />} />
+        <Route path="*" element={<Error />} />
         </Route>
        
        
