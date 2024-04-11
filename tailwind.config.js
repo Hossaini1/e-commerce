@@ -10,10 +10,13 @@ export default {
       primaryDark: "#EEEEEE",
     },
     extend: {
-      screens: {
-        sm: "360px",
-        md: "960px",
-      },
+
+      screens:{
+        "sm":"360px",
+        "md":"960px"
+      }
+    
+
     },
   },
   plugins: [],
