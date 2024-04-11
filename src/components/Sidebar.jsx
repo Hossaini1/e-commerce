@@ -15,7 +15,7 @@ const pages = [
 
 const Sidebar = () => {
   return (
-    <div className="bg-secondaryDark  text-primaryDark w-64 p-15 my-[7rem] mx-20 flex flex-col col-span-1 sm:grid-cols-1  md:col-span-2">
+    <div className="bg-primaryDark  text-secondaryDark w-64 p-15 my-[7rem] mx-20 flex flex-col col-span-1 sm:grid-cols-1  md:col-span-2">
       <ul className=" flex-2   sm:grid-cols-1 md:col-span-2">
         <h1 className="font-bold  text-center text-tertiary animate-pulse md:border-2 ">
           Categories
