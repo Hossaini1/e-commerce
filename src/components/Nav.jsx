@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 
 
 
+
 function Nav() {
   const [isActive, setIsActive] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
@@ -41,7 +42,6 @@ const openModal = () => {
 
 
 
-  
   return (
     <nav className={styles.navbar}>
       <img src={logo} alt="Logo" className={styles.logo} />
@@ -58,18 +58,24 @@ const openModal = () => {
             />
           </form>
         </li>
+
         <div className={styles.iconContainer}>
-          <li onClick={toggleActiveClass}>
-            <div className={styles.navLink}>
+        <li>
+            <Link to="/login" className={styles.navLink}> 
               <FontAwesomeIcon icon={faUser} />
-            </div>
+            </Link>
           </li>
+
           <li onClick={toggleActiveClass}>
-            <div className={styles.navLink}>
+          <Link to="/favorite" className={styles.navLink}> 
               <FontAwesomeIcon icon={faHeart} />
-            </div>
+              </Link>
           </li>
+
           <li onClick={openModal}>
+
+          
+          <li onClick={toggleActiveClass}>
             <div className={styles.navLink}>
               <FontAwesomeIcon icon={faCartShopping} />
             </div>

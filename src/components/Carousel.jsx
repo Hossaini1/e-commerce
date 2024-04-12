@@ -4,7 +4,6 @@ import {
   BsFillArrowLeftCircleFill,
 } from "react-icons/bs";
 
-
 export default function Carousel({ slides }) {
   let [current, setCurrent] = useState(0);
 
@@ -21,16 +20,22 @@ export default function Carousel({ slides }) {
   return (
     <div className="flex justify-center mt-24">
       <div
-        className="grid bg-primaryDark lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1"
-        style={{ height: "40rem", width: "80%" }}
+        className="grid bg-primary lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1"
+        style={{ height: "40rem", width: "90%" }}
       >
         <div
           className="bg-tertiary text-primary self-center m-5 text-center rounded-xl shadow-2xl pt-24"
           style={{ height: "35rem" }}
         >
-          <h1 className="text-8xl m-2 font-bold">SALES</h1>
-          <h3 className="text-4xl m-2 pt-10 font-semibold">Up to</h3>
-          <h5 className="text-8xl m-2 pt-10 font-extrabold">50%</h5>
+          <h1 className="lg:text-8xl m-2 font-bold md:text-4xl sm:text-4xl">
+            SALES
+          </h1>
+          <h3 className="lg:text-4xl m-2 pt-10 font-semibold md:text-2xl sm:text-2xl">
+            Up to
+          </h3>
+          <h5 className="lg:text-8xl m-2 pt-10 font-extrabold md:text-4xl sm:text-4xl">
+            50%
+          </h5>
         </div>
         <div className="overflow-hidden relative rounded-xl shadow-2xl m-10">
           <div
@@ -39,7 +44,7 @@ export default function Carousel({ slides }) {
               transform: `translateX(-${current * 100}%)`,
             }}
           >
-            {slides.map((s,index) => {
+            {slides.map((s, index) => {
               return <img key={index} src={s} />;
             })}
           </div>

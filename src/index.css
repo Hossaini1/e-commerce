@@ -24,6 +24,9 @@
 
 }
 
-.hover-none:hover {
-     color :white !important ;
+.bold-icon {
+  font-weight: bold;
+  width: 6;
+  height: 6;
 }
+
