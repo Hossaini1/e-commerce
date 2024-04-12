@@ -53,9 +53,9 @@ function Nav() {
           </li>
 
           <li onClick={toggleActiveClass}>
-            <div className={styles.navLink}>
+          <Link to="/favorite" className={styles.navLink}> 
               <FontAwesomeIcon icon={faHeart} />
-            </div>
+              </Link>
           </li>
           
           <li onClick={toggleActiveClass}>
