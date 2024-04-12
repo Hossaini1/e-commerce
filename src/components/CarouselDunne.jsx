@@ -32,16 +32,16 @@ const data = [
 const CarouselDunne = () => {
  const {settings,handleClickToSeeMore }=Store()
     return (
-      <div className=" w-3/4 m-auto ">
+      <div className=" sm:w-[80%] md:w-[95%] m-auto ">
           <div className="mt-30  text-center" >
           <p className="text-center text-primary">Trending</p>
           <Slider {...settings}>
               {data.map((item, index) => (
-                  <div key={index} className=" h-50">
+                  <div key={index} className="h-full w-full">
                       <div className=" flex justify-center items-center  rounded-md bg-primary  ">
-                          <img src={item.img} alt="" className=" lg:w-72 w-40 rounded-md bg-cover "/>
+                          <img src={item.img} alt="" className=" sm:w-[100%]  sm:rounded-sm md:rounded-md bg-cover "/>
                       </div>
-                      <div className="flex flex-col justify-center items-center gap-2 bg-secondary text-primary   text-s  opacity-30  rounded-md">
+                      <div className="flex flex-col justify-center items-center  bg-secondary text-primary opacity-30  sm:text-[11px] sm:gap-0 sm:mb-2 sm:rounded-sm md:text-sm  md:gap-2   md:rounded-md">
                           <p>{item.name}</p>
                           <p>{item.price}</p>
                       </div>

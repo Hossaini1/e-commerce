@@ -12,12 +12,52 @@ export function ParentContext({ children }) {
     navigate("/listitems");
   };
   //object setting für slider
+  function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "block", background: "rgb(84,84,84)" }}
+        onClick={onClick}
+      />
+    );
+  }
+  function SamplePrevArrow(props){
+    const { className, style, onClick } = props;
+    return (
+          <div
+            className={className}
+            style={{ ...style, display: "block", background: "rgb(84,84,84)" }}
+            onClick={onClick}
+          />
+        );
+    }
   const settings = {
     dots: false,
     infinite: true,
     speed: 800,
     slidesToShow: 5,
-    slidesToScroll: 3,
+    slidesToScroll: 5,
+    responsive: [
+      {
+        breakpoint: 960,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: false
+        }
+      },
+      {
+        breakpoint: 360,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3
+        }
+      },
+    ],
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
   };
   // pages link und toggle categories für sidebar
  
