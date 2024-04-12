@@ -23,3 +23,7 @@
   transform: scale(1.5); 
 
 }
+
+.hover-none:hover {
+     color :white !important ;
+}
