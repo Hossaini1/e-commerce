@@ -34,7 +34,8 @@ const CarouselDunne = () => {
     return (
       <div className=" sm:w-[80%] md:w-[95%] m-auto ">
           <div className="mt-30  text-center" >
-          <p className="text-center text-primary">Trending</p>
+          <p className="text-center mb-4 md:text-xl text-secondary font-bold "
+          style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>Trending</p>
           <Slider {...settings}>
               {data.map((item, index) => (
                   <div key={index} className="h-full w-full">
