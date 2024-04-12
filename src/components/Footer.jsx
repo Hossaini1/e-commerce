@@ -17,7 +17,7 @@ const Footer = () => {
                 
             </div>
             <div className=" text-primary flex justify-center items-center p-5">
-                <input  type="text" className="outline-none border-b-2 border-dotted border-secondaryDark bg-primary sm:text-xs md:text-xl" placeholder="Enter email" required></input>
+                <input  type="text" className="outline-none border-b-2 border-line border-secondaryDark bg-primary sm:text-xs md:text-xl text-center" placeholder="Enter email" required></input>
             </div>
             <div className=" text-primary flex justify-center items-center ">
                 <button className=" sm:w-20 sm:text-xs md:text-xl md:w-60 md:p-2 sm:p-1 bg-secondary rounded-sm   hover:bg-tertiary transition duration-1000 ease-out  "> Subscribe to </button>
@@ -40,7 +40,7 @@ const Footer = () => {
                 </div>
                 
             </div>
-                <div className="flex justify-center items-center space-x-6 cursor-pointer text-secondaryDark  p-4 sm:text-xs ">
+                <div className="flex justify-center items-center space-x-6 cursor-pointer text-secondaryDark  p-4 sm:text-xs  md:text-xl">
                     <CiFacebook className="icon" />
                     <FaTwitter className="icon" />
                     <IoLogoInstagram className="icon" />
