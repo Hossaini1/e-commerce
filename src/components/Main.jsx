@@ -4,6 +4,9 @@ import Carousel from "./Carousel";
 import CarouselDunne from "./CarouselDunne";
 import Footer from "./Footer";
 
+
+
+
 const Main = () => {
   const slides = [
     "https://i.ibb.co/ncrXc2V/1.png",
@@ -12,10 +15,15 @@ const Main = () => {
     "https://i.ibb.co/yg7BSdM/4.png",
   ];
 
+
+
+
+
   return (
     <main>
       <div className="grid lg:grid-cols-5 md:grid-cols-1 sm:grid-cols-1">
         <div className="col-span-1">
+
           <Sidebar />
         </div>
         <div className="col-span-4">
@@ -29,6 +37,8 @@ const Main = () => {
       <div>
         <Footer/>
       </div>
+
+
 
      
     </main>
