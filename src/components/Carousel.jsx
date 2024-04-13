@@ -22,12 +22,9 @@ export default function Carousel({ slides }) {
   };
 
   return (
-    <div
-      className="grid bg-primary lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-2 mt-24 "
-      style={{ height: "40rem", width: "100%" }}
-    >
+    <div className="grid bg-primary lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 mt-24">
       <div
-        className="bg-tertiary text-primary self-center m-5 text-center rounded-xl shadow-2xl pt-24"
+        className="bg-tertiary text-primary m-5 text-center rounded-xl shadow-2xl pt-24"
         style={{ height: "35rem" }}
       >
         <h1 className="lg:text-8xl m-2 font-bold md:text-4xl sm:text-4xl">
@@ -40,7 +37,10 @@ export default function Carousel({ slides }) {
           50%
         </h5>
       </div>
-      <div className="overflow-hidden relative rounded-xl shadow-2xl m-10">
+      <div
+        className="overflow-hidden relative rounded-xl shadow-2xl m-10"
+        style={{ height: "35rem" }}
+      >
         <div
           className={`flex transition ease-out duration-40`}
           style={{
@@ -53,6 +53,7 @@ export default function Carousel({ slides }) {
                 key={product.id}
                 src={product.thumbnail}
                 alt={product.name}
+                className="object-fill"
               />
             );
           })}
