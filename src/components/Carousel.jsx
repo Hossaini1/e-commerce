@@ -6,8 +6,8 @@ import {
 import DressContextApi from "../store/DressesContext";
 
 export default function Carousel({ slides }) {
-  const { dresses } = DressContextApi();
-  console.log(dresses.products);
+  const { data } = DressContextApi();
+  console.log(data);
 
   let [current, setCurrent] = useState(0);
 
@@ -47,8 +47,14 @@ export default function Carousel({ slides }) {
             transform: `translateX(-${current * 100}%)`,
           }}
         >
-          {slides.map((s, index) => {
-            return <img key={index} />;
+          {data.map((product) => {
+            return (
+              <img
+                key={product.id}
+                src={product.thumbnail}
+                alt={product.name}
+              />
+            );
           })}
         </div>
 

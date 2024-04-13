@@ -7,17 +7,11 @@ import styles from "../styles/Nav.module.css";
 import logo from "../images/haupt.png";
 import { Link } from "react-router-dom";
 
-
-
-
-
 function Nav() {
   const [isActive, setIsActive] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-
-  
   const toggleActiveClass = () => {
     setIsActive(!isActive);
   };
@@ -31,16 +25,13 @@ function Nav() {
     console.log("Search query:", searchQuery);
   };
 
-
-const openModal = () => {
+  const openModal = () => {
     setIsModalOpen(true);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
   };
-
-
 
   return (
     <nav className={styles.navbar}>
@@ -60,21 +51,20 @@ const openModal = () => {
         </li>
 
         <div className={styles.iconContainer}>
-        <li>
-            <Link to="/login" className={styles.navLink}> 
+          <li>
+            <Link to="/login" className={styles.navLink}>
               <FontAwesomeIcon icon={faUser} />
             </Link>
           </li>
 
           <li onClick={toggleActiveClass}>
-          <Link to="/favorite" className={styles.navLink}> 
+            <Link to="/favorite" className={styles.navLink}>
               <FontAwesomeIcon icon={faHeart} />
-              </Link>
+            </Link>
           </li>
 
-          <li onClick={openModal}>
+          <li onClick={openModal}></li>
 
-          
           <li onClick={toggleActiveClass}>
             <div className={styles.navLink}>
               <FontAwesomeIcon icon={faCartShopping} />
