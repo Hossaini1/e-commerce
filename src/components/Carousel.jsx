@@ -53,7 +53,7 @@ export default function Carousel({ slides }) {
                 key={product.id}
                 src={product.thumbnail}
                 alt={product.name}
-                className="object-fill"
+                className="object-cover"
               />
             );
           })}
