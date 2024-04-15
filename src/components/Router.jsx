@@ -25,37 +25,30 @@ const Router = () => {
   return (
     <>
 
+    <Header />
+    <Routes>
+      <Route path="/" element={<Main />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/favorite" element={<Favorite />} />
+      <Route path="/cartshopping" element={<CartShopping />} />
+      <Route path="/listitems" element={<AllListItems />} />
+      <Route path="/blouseshirts" element={<BlousesShirts />} />
+      <Route path="/dressesskirts" element={<DressesSkirts />} />
+      <Route path="/maternityclothes" element={<MaternityClothes />} />
+      <Route path="/pantsJeans" element={<PantsJeans />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/shoes" element={<Shoes />} />
+      <Route path="/tshirtstops" element={<TshirtsTops />} />
+      <Route path="/womensjacke" element={<WomensJacke />} />
+      <Route path="/AllLisItems" element={<AllListItems />} />
+      <Route path="*" element={<Error />} />
+    </Routes>
+    <Footer />
+  </>
+);
 
 
-      <Routes>
-        <Route path="/" element={<Header />}>
-
-        <Route index element={<Main />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/favorite"element={<Favorite />} />
-        <Route path="/cartshopping" element={<CartShopping />} />
-        <Route path="/shoppingcart" element={<ShoppingCartPage />} />
-        <Route path="/payment" element={<PaymentPage /> } />
-        <Route path="/listitems" element={<AllListItems />} />
-        <Route path="/blouseshirts" element={<BlousesShirts />} />
-        {/* <Route path="/cartshopping" element={<CartShopping />} /> */}
-        <Route path="/dressesskirts" element={<DressesSkirts />} />
-        <Route path="/maternityclothes" element={<MaternityClothes />} />
-        <Route path="/pantsjeans" element={<PantsJeans />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/shoes" element={<Shoes />} />
-        <Route path="/tshirtstops" element={<TshirtsTops />} />
-        <Route path="/womensjacke" element={<WomensJacke />} />
-        
-        <Route path="*" element={<Error />} />
-
-        </Route>
-      </Routes>
-      {/* commented footer, because there is bug */}
-      {/* <Footer /> */}
-    </>
-  );
 
 };
-
+/* text  */
 export default Router;
