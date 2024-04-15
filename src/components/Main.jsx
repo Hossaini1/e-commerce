@@ -34,10 +34,10 @@ const Main = () => {
       <div>
         <CarouselDunne/>
       </div>
-      <div>
+     {/*  <div>
         <Footer/>
       </div>
-
+ */}
 
 
      

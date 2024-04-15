@@ -14,36 +14,34 @@ import Shoes from "../pages/Shoes";
 import TshirtsTops from "../pages/TshirtsTops";
 import WomensJacke from "../pages/WomensJacke";
 import Error from "../pages/Error";
-
+import Footer from "./Footer";
 
 const Router = () => {
 
 
   return (
     <>
-      <Routes>
-        
-        <Route path="/" element={<Header />}>
-        <Route index element={<Main />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/favorite"element={<Favorite />} />
-        <Route path="/cartshopping" element={<CartShopping />} />
-        <Route path="/listitems" element={<AllListItems />} />
-        <Route path="/blouseshirts" element={<BlousesShirts />} />
-        <Route path="/cartshopping" element={<CartShopping />} />
-        <Route path="/dressesskirts" element={<DressesSkirts />} />
-        <Route path="/maternityclothes" element={<MaternityClothes />} />
-        <Route path="/pantsjeans" element={<PantsJeans />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/shoes" element={<Shoes />} />
-        <Route path="/tshirtstops" element={<TshirtsTops />} />
-        <Route path="/womensjacke" element={<WomensJacke />} />
-        <Route path="*" element={<Error />} />
-        </Route>
-       
-       
-      </Routes>
-    </>
-  );
+    <Header />
+    <Routes>
+      <Route path="/" element={<Main />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/favorite" element={<Favorite />} />
+      <Route path="/cartshopping" element={<CartShopping />} />
+      <Route path="/listitems" element={<AllListItems />} />
+      <Route path="/blouseshirts" element={<BlousesShirts />} />
+      <Route path="/dressesskirts" element={<DressesSkirts />} />
+      <Route path="/maternityclothes" element={<MaternityClothes />} />
+      <Route path="/pantsjeans" element={<PantsJeans />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/shoes" element={<Shoes />} />
+      <Route path="/tshirtstops" element={<TshirtsTops />} />
+      <Route path="/womensjacke" element={<WomensJacke />} />
+      <Route path="/AllLisItems" element={<AllListItems />} />
+      <Route path="*" element={<Error />} />
+    </Routes>
+    <Footer />
+  </>
+);
 };
+
 export default Router;
