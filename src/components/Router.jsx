@@ -1,4 +1,4 @@
-import { Routes, Route} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Main from "./Main";
 import Header from "./Header";
 import AllListItems from "../pages/AllListItems";
@@ -17,15 +17,12 @@ import Error from "../pages/Error";
 import PaymentPage from "./PaymentPage";
 import ShoppingCartPage from "./ShoppingCartPage";
 
-
 const Router = () => {
-
-
   return (
     <>
       <Routes>
-        
         <Route path="/" element={<Header />}>
+
         <Route index element={<Main />} />
         <Route path="/login" element={<Login />} />
         <Route path="/favorite"element={<Favorite />} />
@@ -44,10 +41,11 @@ const Router = () => {
         <Route path="/womensjacke" element={<WomensJacke />} />
         
         <Route path="*" element={<Error />} />
+
         </Route>
-       
-       
       </Routes>
+      {/* commented footer, because there is bug */}
+      {/* <Footer /> */}
     </>
   );
 };
