@@ -1,4 +1,4 @@
-import { Routes, Route} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Main from "./Main";
 import Header from "./Header";
 import AllListItems from "../pages/AllListItems";
@@ -14,13 +14,17 @@ import Shoes from "../pages/Shoes";
 import TshirtsTops from "../pages/TshirtsTops";
 import WomensJacke from "../pages/WomensJacke";
 import Error from "../pages/Error";
+
 import Footer from "./Footer";
 
+import PaymentPage from "./PaymentPage";
+import ShoppingCartPage from "./ShoppingCartPage";
+
+
 const Router = () => {
-
-
   return (
     <>
+
     <Header />
     <Routes>
       <Route path="/" element={<Main />} />
@@ -42,6 +46,9 @@ const Router = () => {
     <Footer />
   </>
 );
+
+
+
 };
 /* text  */
 export default Router;
