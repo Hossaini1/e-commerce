@@ -54,7 +54,7 @@ import styles from '../styles/Favorite.module.css';
         <div className={styles.emptyWishlist}>
           <h2 className={styles.emptyTitle}>Your wishlist is empty.</h2>
           <p className={styles.emptyText}>Save the items you like most so you don't lose sight of them.</p>
-          <button className={styles.getInspiredButton} onClick={() => alert('More shopping')}>More shopping</button> 
+          <button className={styles.getInspiredButton} onClick={() => alert('Discover more')}>Discover more</button> 
         </div>
       ) : (
         <div className={styles.wishlistItems}>
