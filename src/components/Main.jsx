@@ -21,25 +21,23 @@ const Main = () => {
 
   return (
     <main>
-      <div className="grid lg:grid-cols-5 md:grid-cols-1 sm:grid-cols-1">
+      <div className=" grid lg:grid-cols-5 md:grid-cols-1 sm:grid-cols-1">
         <div className="col-span-1">
 
           <Sidebar />
         </div>
-        <div className="col-span-4">
+        <div className="md:col-span-4 sm:col-span-5">
           <Carousel slides={slides} />
         </div>
       </div>
 
-      <div>
+    
+
+
+
+      <div >
         <CarouselDunne/>
       </div>
-      <div>
-        <Footer/>
-      </div>
-
-
-
      
     </main>
   );

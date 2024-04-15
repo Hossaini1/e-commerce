@@ -1,86 +1,80 @@
-import { useState } from "react";
-import {
-  BsFillArrowRightCircleFill,
-  BsFillArrowLeftCircleFill,
-} from "react-icons/bs";
-import DressContextApi from "../store/DressesContext";
+import '../styles/carousel.css'
+import { useEffect, useState } from "react";
+import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
+import { RxDotFilled } from "react-icons/rx";
 
-export default function Carousel({ slides }) {
-  const { data } = DressContextApi();
-  console.log(data);
+export default function Carousel() {
+  const slides = [
+    {
+      url: "https://images.pexels.com/photos/833185/pexels-photo-833185.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+    {
+      url: "https://images.pexels.com/photos/1386897/pexels-photo-1386897.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+    {
+      url: "https://images.pexels.com/photos/1375849/pexels-photo-1375849.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+    {
+      url: "https://images.pexels.com/photos/2916814/pexels-photo-2916814.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+    {
+      url: "https://images.pexels.com/photos/3195980/pexels-photo-3195980.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+  ];
 
-  let [current, setCurrent] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  let previousSlide = () => {
-    if (current === 0) setCurrent(slides.length - 1);
-    else setCurrent(current - 1);
+  const prevSlide = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
   };
 
-  let nextSlide = () => {
-    if (current === slides.length - 1) setCurrent(0);
-    else setCurrent(current + 1);
+  const nextSlide = () => {
+    const isLastSlide = currentIndex === slides.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
   };
+
+  const goToSlide = (slideIndex) => {
+    setCurrentIndex(slideIndex);
+  };
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      nextSlide();
+    }, 3000);
+
+    return () => clearInterval(intervalId);
+  }, [currentIndex]);
 
   return (
-    <div className="grid bg-primary lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 mt-24">
-      <div
-        className="bg-tertiary text-primary m-5 text-center rounded-xl shadow-2xl pt-24"
-        style={{ height: "35rem" }}
-      >
-        <h1 className="lg:text-8xl m-2 font-bold md:text-4xl sm:text-4xl">
-          SALES
-        </h1>
-        <h3 className="lg:text-4xl m-2 pt-10 font-semibold md:text-2xl sm:text-2xl">
-          Up to
-        </h3>
-        <h5 className="lg:text-8xl m-2 pt-10 font-extrabold md:text-4xl sm:text-4xl">
-          50%
-        </h5>
-      </div>
-      <div
-        className="overflow-hidden relative rounded-xl shadow-2xl m-10"
-        style={{ height: "35rem" }}
-      >
-        <div
-          className={`flex transition ease-out duration-40`}
-          style={{
-            transform: `translateX(-${current * 100}%)`,
-          }}
-        >
-          {data.map((product) => {
-            return (
-              <img
-                key={product.id}
-                src={product.thumbnail}
-                alt={product.name}
-                className="object-cover"
-              />
-            );
-          })}
+    <div className="  p-[2rem] ">
+      <div className=" max-w-[1400px] w-full md:w-[68vw] m-auto py-2 relative group">
+        <img
+          src={slides[currentIndex].url}
+          alt={`Slide ${currentIndex}`}
+          className="w-full h-auto max-h-[700px]   object-center rounded-2xl duration-500"
+        />
+        <h2>sdfasdfs</h2>
+
+        <div className="hidden group-hover:block absolute top-[50%] -left-4 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+          <BsChevronCompactLeft className="text-primary" onClick={prevSlide} size={40} />
         </div>
 
-        <div className="absolute top-0 h-full w-full justify-between items-center flex text-primary px-10 text-3xl">
-          <button onClick={previousSlide}>
-            <BsFillArrowLeftCircleFill />
-          </button>
-          <button onClick={nextSlide}>
-            <BsFillArrowRightCircleFill />
-          </button>
+        <div className="hidden group-hover:block absolute top-[50%] -right-4 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer text-primary">
+          <BsChevronCompactRight onClick={nextSlide} size={40} />
         </div>
-        <div className="absolute bottom-0 py-4 flex justify-center gap-3 w-full">
-          {slides.map((s, i) => {
-            return (
-              <div
-                onClick={() => {
-                  setCurrent(i);
-                }}
-                key={"circle" + i}
-                className={`rounded-full w-3 h-3 ${
-                  i == current ? "bg-primary" : "bg-secondary"
-                }`}
-              ></div>
-            );
-          })}
+        <div className="flex top-4 justify-center py-2">
+          {slides.map((slide, slideIndex) => (
+            <div
+              key={slideIndex}
+              onClick={() => goToSlide(slideIndex)}
+              className={`text-2xl cursor-pointer ${slideIndex === currentIndex ? 'text-purple-400' : ''}`}
+            >
+              <RxDotFilled />
+            </div>
+          ))}
         </div>
       </div>
     </div>
