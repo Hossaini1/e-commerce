@@ -13,9 +13,8 @@ import { Link } from "react-router-dom";
 function Nav() {
   const [isActive, setIsActive] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [isModalOpen, setIsModalOpen] = useState(false); // 
-  const [cartItemCount, setCartItemCount] = useState(0); // status for the number of products in the basket
-  
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [cartItemCount, setCartItemCount] = useState(0);
 
   const toggleActiveClass = () => {
     setIsActive(!isActive);
@@ -32,6 +31,7 @@ function Nav() {
 
   const openModal = () => {
     setIsModalOpen(true);
+    setIsActive(false); // Закрываем меню при открытии корзины
   };
 
   const closeModal = () => {
@@ -65,40 +65,19 @@ function Nav() {
           </li>
         
           <li>
-
-
-          <li onClick={toggleActiveClass}>
-
             <Link to="/favorite" className={styles.navLink}>
               <FontAwesomeIcon icon={faHeart} />
             </Link>
           </li>
 
-
-          <li onClick={openModal} className={styles.navLink}>
-            <li onClick={toggleActiveClass}>
-              <div className={styles.navLink}>
-                <FontAwesomeIcon icon={faCartShopping} />
-                {cartItemCount > 0 && (      // Display product quantity only if it is greater than 0.
-                    <div className="cart-item-count">{cartItemCount}</div>
-                    )}
-              </div>
-            </li>
-          </li>
-          <li onClick={openModal}></li>
-
-          <li onClick={toggleActiveClass}>
-            <div className={styles.navLink}>
-              <FontAwesomeIcon icon={faCartShopping} />
-            </div>
-
-
-          {/* Modal Shopping Cart */}
+          <li className={styles.navLink} onClick={openModal}>
             <div>
-              <ShoppingCartModal isOpen={isModalOpen} onClose={closeModal} 
-              setCartItemCount={setCartItemCount} // Providing a function to set the number of products in the basket
-              />
-            </div>  
+              <FontAwesomeIcon icon={faCartShopping} />
+              {cartItemCount > 0 && (
+                <div className="cart-item-count">{cartItemCount}</div>
+              )}
+            </div>
+          </li>
         </div>
       </ul>
 
@@ -111,7 +90,11 @@ function Nav() {
         <span className={styles.bar}></span>
       </div>
 
-      
+      <ShoppingCartModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        setCartItemCount={setCartItemCount}
+      />
     </nav>
   );
 }
