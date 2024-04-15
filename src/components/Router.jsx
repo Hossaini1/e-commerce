@@ -31,7 +31,7 @@ const Router = () => {
       <Route path="/blouseshirts" element={<BlousesShirts />} />
       <Route path="/dressesskirts" element={<DressesSkirts />} />
       <Route path="/maternityclothes" element={<MaternityClothes />} />
-      <Route path="/pantsjeans" element={<PantsJeans />} />
+      <Route path="/pantsJeans" element={<PantsJeans />} />
       <Route path="/register" element={<Register />} />
       <Route path="/shoes" element={<Shoes />} />
       <Route path="/tshirtstops" element={<TshirtsTops />} />
