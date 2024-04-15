@@ -37,9 +37,12 @@ const Main = () => {
         <CarouselDunne addToCart={addToCart} />
         <CartShopping cartItems={cartItems} />
       </div>
-      <div>
-        <Footer />
+
+     {/*  <div>
+        <Footer/>
       </div>
+ */}
+
     </main>
   );
 };
