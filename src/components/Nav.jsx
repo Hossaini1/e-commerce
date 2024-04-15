@@ -40,7 +40,9 @@ function Nav() {
 
   return (
     <nav className={styles.navbar}>
-      <img src={logo} alt="Logo" className={styles.logo} />
+      <Link to="/" className={styles.logo}>
+        <img src={logo} alt="Logo" className={styles.logo} />
+      </Link>
 
       <ul className={`${styles.navMenu} ${isActive ? styles.active : ""}`}>
         <li>
