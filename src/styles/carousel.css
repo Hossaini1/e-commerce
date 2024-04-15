@@ -1,0 +1,17 @@
+.slider > div > .wrapper{
+    width: calc(100% -(300px + 2));
+    margin-left:auto ;
+   
+}
+.slider > .item{
+    position: relative;
+    height: 474px;
+
+}
+
+.slider .text-content{
+    position: relative;
+    height: 100%;
+    justify-content: flex-end;
+    padding: 0 0 10% 10%;
+}

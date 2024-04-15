@@ -14,6 +14,7 @@ import Shoes from "../pages/Shoes";
 import TshirtsTops from "../pages/TshirtsTops";
 import WomensJacke from "../pages/WomensJacke";
 import Error from "../pages/Error";
+import Footer from "./Footer";
 
 import Footer from "./Footer";
 
