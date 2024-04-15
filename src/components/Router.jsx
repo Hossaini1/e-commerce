@@ -14,6 +14,8 @@ import Shoes from "../pages/Shoes";
 import TshirtsTops from "../pages/TshirtsTops";
 import WomensJacke from "../pages/WomensJacke";
 import Error from "../pages/Error";
+import PaymentPage from "./PaymentPage";
+import ShoppingCartPage from "./ShoppingCartPage";
 
 
 const Router = () => {
@@ -28,9 +30,11 @@ const Router = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/favorite"element={<Favorite />} />
         <Route path="/cartshopping" element={<CartShopping />} />
+        <Route path="/shoppingcart" element={<ShoppingCartPage />} />
+        <Route path="/payment" element={<PaymentPage /> } />
         <Route path="/listitems" element={<AllListItems />} />
         <Route path="/blouseshirts" element={<BlousesShirts />} />
-        <Route path="/cartshopping" element={<CartShopping />} />
+        {/* <Route path="/cartshopping" element={<CartShopping />} /> */}
         <Route path="/dressesskirts" element={<DressesSkirts />} />
         <Route path="/maternityclothes" element={<MaternityClothes />} />
         <Route path="/pantsjeans" element={<PantsJeans />} />
@@ -38,6 +42,7 @@ const Router = () => {
         <Route path="/shoes" element={<Shoes />} />
         <Route path="/tshirtstops" element={<TshirtsTops />} />
         <Route path="/womensjacke" element={<WomensJacke />} />
+        
         <Route path="*" element={<Error />} />
         </Route>
        
