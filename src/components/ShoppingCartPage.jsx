@@ -147,12 +147,12 @@ const ShoppingCartPage = () => {
           <div className="mt-10 flex justify-center  items-center">
             <p className="mr-10 font-bold ">We Accept:</p>
 
-            {/* Add logos or payment methods here */}
+            {/* Logos and payment methods here */}
             <FaCcVisa  alt="Visa" className="w-10 h-10 mr-3 border-b border-tertiary " />
             <FaCcMastercard alt="Mastercard" className="w-10 h-10 mr-3 border-b border-tertiary  " />
             <FaCcPaypal  alt="PayPal" className="w-10 h-10 border-b border-tertiary " />
 
-            {/* Add more payment method logos as needed */}
+            
           </div>
         </div>
       </div>

@@ -30,7 +30,7 @@ const data = [
   },
 ];
 const CarouselDunne = () => {
-  const { settings, handleClickToSeeMore } = Store();
+  const { settings, handleClickToSeeMore, handleAddToCart} = Store();
   return (
     <div className=" sm:w-[80%] md:w-[95%] m-auto ">
       <div className="mt-30  text-center">
