@@ -8,7 +8,7 @@ export default {
       tertiary: "#D01345",
       secondaryDark: "#2D2D2D",
       primaryDark: "#EEEEEE", 
-      andrei: "#E0FFFF"
+      
     }, 
     extend: {
 
@@ -20,5 +20,5 @@ export default {
 
     },
   },
-  plugins: [],
+
 }
