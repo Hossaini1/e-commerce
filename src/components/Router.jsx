@@ -1,4 +1,4 @@
-import { Routes, Route} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Main from "./Main";
 import Header from "./Header";
 import AllListItems from "../pages/AllListItems";
@@ -17,11 +17,14 @@ import Error from "../pages/Error";
 import Footer from "./Footer";
 
 
+import PaymentPage from "./PaymentPage";
+import ShoppingCartPage from "./ShoppingCartPage";
+
+
 const Router = () => {
-
-
   return (
     <>
+
       <Routes>
         
         <Route path="/" element={<Header />}>
@@ -47,5 +50,8 @@ const Router = () => {
        <Footer /> 
     </>
   );
+
+   
 };
+/* text  */
 export default Router;

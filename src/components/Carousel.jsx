@@ -1,86 +1,91 @@
-import { useState } from "react";
-import {
-  BsFillArrowRightCircleFill,
-  BsFillArrowLeftCircleFill,
-} from "react-icons/bs";
-import DressContextApi from "../store/DressesContext";
+import '../styles/carousel.css'
+import { useEffect, useState } from "react";
+import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
+import { RxDotFilled } from "react-icons/rx";
 
-export default function Carousel({ slides }) {
-  const { data } = DressContextApi();
-  console.log(data);
+export default function Carousel() {
+  const slides = [
+    {
+      product:'Skrists',
+      url: "https://wallpaperaccess.com/full/1272041.jpg",
+    },
+    {
+      product:'Blouse',
+      url: "https://c4.wallpaperflare.com/wallpaper/174/310/462/model-poses-wedding-wallpaper-preview.jpg",
+    },
+    {
+      product:'Women jacke',
+      url: "https://images.pexels.com/photos/6567744/pexels-photo-6567744.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
+    {
+      product:'T-shirs & Jeans',
+      url: "https://images.pexels.com/photos/3775120/pexels-photo-3775120.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    },
+    {
+      product:'Shoes',
+      url: "https://images.pexels.com/photos/932403/pexels-photo-932403.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    },
+  ];
 
-  let [current, setCurrent] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  let previousSlide = () => {
-    if (current === 0) setCurrent(slides.length - 1);
-    else setCurrent(current - 1);
+  const prevSlide = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
   };
 
-  let nextSlide = () => {
-    if (current === slides.length - 1) setCurrent(0);
-    else setCurrent(current + 1);
+  const nextSlide = () => {
+    const isLastSlide = currentIndex === slides.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
   };
+
+  const goToSlide = (slideIndex) => {
+    setCurrentIndex(slideIndex);
+  };
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      nextSlide();
+    }, 4000);
+
+    return () => clearInterval(intervalId);
+  }, [currentIndex]);
 
   return (
-    <div className="grid bg-primary lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 mt-24">
-      <div
-        className="bg-tertiary text-primary m-5 text-center rounded-xl shadow-2xl pt-24"
-        style={{ height: "35rem" }}
-      >
-        <h1 className="lg:text-8xl m-2 font-bold md:text-4xl sm:text-4xl">
-          SALES
-        </h1>
-        <h3 className="lg:text-4xl m-2 pt-10 font-semibold md:text-2xl sm:text-2xl">
-          Up to
-        </h3>
-        <h5 className="lg:text-8xl m-2 pt-10 font-extrabold md:text-4xl sm:text-4xl">
-          50%
-        </h5>
-      </div>
-      <div
-        className="overflow-hidden relative rounded-xl shadow-2xl m-10"
-        style={{ height: "35rem" }}
-      >
-        <div
-          className={`flex transition ease-out duration-40`}
-          style={{
-            transform: `translateX(-${current * 100}%)`,
-          }}
-        >
-          {data.map((product) => {
-            return (
-              <img
-                key={product.id}
-                src={product.thumbnail}
-                alt={product.name}
-                className="object-cover"
-              />
-            );
-          })}
+    <div className=" p-8  md:mt-10 sm:h-auto ">
+      <div className=" max-w-[1400px] w-full md:w-[67vw] m-auto py-2 relative group">
+       <div className='relative'>
+       <img
+          src={slides[currentIndex].url}
+          alt={`Slide ${currentIndex}`}
+          className="w-full h-auto max-h-[700px] object-center rounded-2xl duration-500"
+        />
+      
+       </div>
+       <div className='sm:rounded-xl sm:text-center sm:top-4 sm:left-3 sm:w-[12rem] sm:h-36 sm:p-4 md:w-[26rem] md:h-80 absolute md:bottom-[430px] md:left-7 md:top-7 md:rounded-3xl max-w-full sm:bg-tertiaryLight md:bg-tertiary flex justify-center items-center flex-col md:gap-5'>
+          <h2 className='sm:text-4xl sm:pb-1 text-primary font-bold md:text-7xl'>Sale 20%</h2>
+          <h4 className='sm:text-xl font-bold sm:text-primary sm:pb-2 md:text-3xl  text-primary'>{slides[currentIndex].product}</h4>
+          <button className='sm:text-sm text-secondaryDark md:text-2xl font-bold border-none bg-primary md:p-2 md:w-44 rounded-3xl sm:px-2 sm:py-[0.15rem] cursor-pointer '>Buy it</button>
         </div>
 
-        <div className="absolute top-0 h-full w-full justify-between items-center flex text-primary px-10 text-3xl">
-          <button onClick={previousSlide}>
-            <BsFillArrowLeftCircleFill />
-          </button>
-          <button onClick={nextSlide}>
-            <BsFillArrowRightCircleFill />
-          </button>
+        <div className="hidden group-hover:block absolute top-[50%] -left-4  bg-secondary text-2xl rounded-full md:p-2 bg-black/20 text-white cursor-pointer">
+          <BsChevronCompactLeft className="text-primary " onClick={prevSlide} size={40} />
         </div>
-        <div className="absolute bottom-0 py-4 flex justify-center gap-3 w-full">
-          {slides.map((s, i) => {
-            return (
-              <div
-                onClick={() => {
-                  setCurrent(i);
-                }}
-                key={"circle" + i}
-                className={`rounded-full w-3 h-3 ${
-                  i == current ? "bg-primary" : "bg-secondary"
-                }`}
-              ></div>
-            );
-          })}
+
+        <div className="hidden group-hover:block absolute top-[50%] -right-4 text-2xl rounded-full md:p-2 bg-secondary text-white cursor-pointer text-primary">
+          <BsChevronCompactRight onClick={nextSlide} size={40} />
+        </div>
+        <div className="flex  justify-center md:py-2 ">
+          {slides.map((slide, slideIndex) => (
+            <div
+              key={slideIndex}
+              onClick={() => goToSlide(slideIndex)}
+              className={`text-2xl cursor-pointer ${slideIndex === currentIndex ? 'text-purple-400' : ''}`}
+            >
+              <RxDotFilled />
+            </div>
+          ))}
         </div>
       </div>
     </div>

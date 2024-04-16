@@ -1,5 +1,6 @@
 
 
+
 const CartShopping = ({ cart }) => {
   return (
     <div className="bg-gray-100 p-4 rounded-md">
@@ -19,8 +20,25 @@ const CartShopping = ({ cart }) => {
           Total: ${cart.reduce((total, item) => total + parseInt(item.price), 0)}
         </div>
       )}
+import { useState } from "react";
+import CarouselDunne from "../components/CarouselDunne";
+
+const CartShopping = ({ cartItems }) => {
+  return (
+    <div>
+      <ul>
+        {cartItems.map((item, index) => (
+          <li key={index}>
+            <p>
+              {item.name} - ${item.price}
+            </p>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
 
+
 export default CartShopping;
+

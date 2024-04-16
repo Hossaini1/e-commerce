@@ -10,11 +10,15 @@ export default {
       primaryDark: "#EEEEEE", 
       andrei: "#E0FFFF"
     }, 
+      primaryDark: "#EEEEEE",
+      tertiaryLight: "#d0134563",
+    },
     extend: {
 
       screens:{
         "sm":"360px",
-        "md":"960px"
+        "md":"960px",
+        "xl":"1280px"
       }
     
 

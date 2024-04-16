@@ -3,7 +3,7 @@
     margin: 0 auto;
     padding: 20px;
     font-family: sans-serif;
-    margin-top: 5%;
+    margin-top: 9%;
     
   }
   
@@ -12,7 +12,6 @@
     margin-bottom: 20px;
     font-size: 2em;
     font-weight: bold;
-
   }
   
   .emptyWishlist {
@@ -32,7 +31,7 @@
   .getInspiredButton {
     padding: 10px 20px;
     margin-top: 30px;
-    background-color: #D01345; 
+    background-color: #D01345;
     color: white;
     border: none;
     border-radius: 5px;
@@ -41,26 +40,26 @@
   
   .wishlistItems {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
   }
   
   .wishlistItem {
     border: 1px solid #ccc;
     border-radius: 5px;
-    overflow: hidden; 
+    overflow: hidden;
   }
   
   .itemImage {
     width: 100%;
-    height: 200px; 
-    object-fit: cover; 
+    height: 200px;
+    object-fit: cover;
   }
   
   .itemDetails {
     padding: 10px;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
   }
   
@@ -81,5 +80,15 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+
+    
     
   }
+
+  
+  
+  .itemInfo {
+    cursor: help;
+  }
+  
+
