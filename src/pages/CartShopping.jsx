@@ -1,7 +1,24 @@
+import { useState } from "react";
+import CarouselDunne from "../components/CarouselDunne";
 
-const CartShopping = () => {
+const CartShopping = ({ cartItems }) => {
   return (
-    <div>CartShopping</div>
-  )
-}
-export default CartShopping
+    <div>
+      
+      <ul>
+        {cartItems.map((item, index) => (
+          <li key={index}>
+            <p>
+              {item.name} - ${item.price}
+            </p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+
+export default CartShopping;
+
+

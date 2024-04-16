@@ -3,13 +3,13 @@ import styles from '../styles/Favorite.module.css';
 
 
 
-// ICH WARTE AUF DIE API
-/*function Favorite() {
+
+function Favorite() {
   const [wishlistItems, setWishlistItems] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('hier wird api');
+        const response = await fetch('https://dummyjson.com/products/category/womens-dresses');
         const data = await response.json();
 
         const formattedItems = data.map(item => ({
@@ -27,16 +27,16 @@ import styles from '../styles/Favorite.module.css';
     };
 
     fetchData();
-  }, []);   */
+  }, []);   
 
 
-  function Favorite() {
+  /*function Favorite() {
     const [wishlistItems, setWishlistItems] = useState([
       { id: 1, name: 'Item blabla 1', price: 10.99, image: 'https://i.pinimg.com/originals/70/6a/97/706a97a963fd0d5510c2d817332c932c.jpg'},
       { id: 2, name: 'Item blabla 2', price: 9.99, image: 'https://i.pinimg.com/originals/70/6a/97/706a97a963fd0d5510c2d817332c932c.jpg'},
       { id: 3, name: 'Item blabla 3', price: 11.99, image: 'https://i.pinimg.com/originals/70/6a/97/706a97a963fd0d5510c2d817332c932c.jpg'},
       { id: 4, name: 'Item blabla 4', price: 12.99, image: 'https://i.pinimg.com/originals/70/6a/97/706a97a963fd0d5510c2d817332c932c.jpg'},
-    ]);
+    ]);*/
   
   const addToWishlist = (item) => {
     setWishlistItems([...wishlistItems, item]);
@@ -54,7 +54,7 @@ import styles from '../styles/Favorite.module.css';
         <div className={styles.emptyWishlist}>
           <h2 className={styles.emptyTitle}>Your wishlist is empty.</h2>
           <p className={styles.emptyText}>Save the items you like most so you don't lose sight of them.</p>
-          <button className={styles.getInspiredButton} onClick={() => alert('More shopping')}>More shopping</button> 
+          <button className={styles.getInspiredButton} onClick={() => alert('Discover more')}>Discover more</button> 
         </div>
       ) : (
         <div className={styles.wishlistItems}>
