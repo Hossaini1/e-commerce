@@ -66,9 +66,9 @@ function Nav() {
           <li onClick={openModal}></li>
 
           <li onClick={toggleActiveClass}>
-            <div className={styles.navLink}>
+            <Link to="/cartshopping" className={styles.navLink}>
               <FontAwesomeIcon icon={faCartShopping} />
-            </div>
+            </Link>
 
             {/* Modal Shopping Cart */}
             <div>
