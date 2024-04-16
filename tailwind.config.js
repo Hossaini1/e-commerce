@@ -13,8 +13,8 @@ export default {
     extend: {
 
       screens:{
-        "sm":"360px",
-        "md":"960px",
+        "sm":"370px",
+        "md":"980px",
         
       }
     
