@@ -9,7 +9,7 @@ const Sidebar = () => {
 
   const pages = [
 
-    { title: "Dresses & Skirts", path: "/dressesskrits" },
+    { title: "Dresses & Skirts", path: "/dressesskirts" },
     { title: "Blouses & Shirts", path: "/blousesshirts" },
     { title: "T-shirts & Tops", path: "/t-shirttops" },
     { title: "Pants & Jeans", path: "/pantsjeans" },
