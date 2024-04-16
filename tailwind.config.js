@@ -8,6 +8,7 @@ export default {
       tertiary: "#D01345",
       secondaryDark: "#2D2D2D",
       primaryDark: "#EEEEEE",
+      tertiaryLight: "#d0134563",
     },
     extend: {
 

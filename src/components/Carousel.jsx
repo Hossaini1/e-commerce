@@ -6,19 +6,23 @@ import { RxDotFilled } from "react-icons/rx";
 export default function Carousel() {
   const slides = [
     {
-      url: "https://images.pexels.com/photos/833185/pexels-photo-833185.jpeg?auto=compress&cs=tinysrgb&w=600",
+      product:'Skrists',
+      url: "https://wallpaperaccess.com/full/1272041.jpg",
     },
     {
-      url: "https://images.pexels.com/photos/1386897/pexels-photo-1386897.jpeg?auto=compress&cs=tinysrgb&w=600",
+      product:'Blouse',
+      url: "https://c4.wallpaperflare.com/wallpaper/174/310/462/model-poses-wedding-wallpaper-preview.jpg",
     },
     {
-      url: "https://images.pexels.com/photos/1375849/pexels-photo-1375849.jpeg?auto=compress&cs=tinysrgb&w=600",
+      product:'Women jacke',
+      url: "https://images.pexels.com/photos/6567744/pexels-photo-6567744.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
+    {
+      product:'T-shirs & Jeans',
+      url: "https://images.pexels.com/photos/3775120/pexels-photo-3775120.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
     {
-      url: "https://images.pexels.com/photos/2916814/pexels-photo-2916814.jpeg?auto=compress&cs=tinysrgb&w=600",
-    },
-    {
-      url: "https://images.pexels.com/photos/3195980/pexels-photo-3195980.jpeg?auto=compress&cs=tinysrgb&w=600",
+      product:'Shoes',
+      url: "https://images.pexels.com/photos/932403/pexels-photo-932403.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
   ];
 
@@ -43,29 +47,36 @@ export default function Carousel() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       nextSlide();
-    }, 3000);
+    }, 4000);
 
     return () => clearInterval(intervalId);
   }, [currentIndex]);
 
   return (
-    <div className="  p-[2rem] ">
-      <div className=" max-w-[1400px] w-full md:w-[68vw] m-auto py-2 relative group">
-        <img
+    <div className=" p-8  md:mt-10 sm:h-auto ">
+      <div className=" max-w-[1400px] w-full md:w-[67vw] m-auto py-2 relative group">
+       <div className='relative'>
+       <img
           src={slides[currentIndex].url}
           alt={`Slide ${currentIndex}`}
-          className="w-full h-auto max-h-[700px]   object-center rounded-2xl duration-500"
+          className="w-full h-auto max-h-[700px] object-center rounded-2xl duration-500"
         />
-        <h2>sdfasdfs</h2>
-
-        <div className="hidden group-hover:block absolute top-[50%] -left-4 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
-          <BsChevronCompactLeft className="text-primary" onClick={prevSlide} size={40} />
+      
+       </div>
+       <div className='sm:rounded-xl sm:text-center sm:top-4 sm:left-3 sm:w-[12rem] sm:h-36 sm:p-4 md:w-[26rem] md:h-80 absolute md:bottom-[430px] md:left-7 md:top-7 md:rounded-3xl max-w-full sm:bg-tertiaryLight md:bg-tertiary flex justify-center items-center flex-col md:gap-5'>
+          <h2 className='sm:text-4xl sm:pb-1 text-primary font-bold md:text-7xl'>Sale 20%</h2>
+          <h4 className='sm:text-xl font-bold sm:text-primary sm:pb-2 md:text-3xl  text-primary'>{slides[currentIndex].product}</h4>
+          <button className='sm:text-sm text-secondaryDark md:text-2xl font-bold border-none bg-primary md:p-2 md:w-44 rounded-3xl sm:px-2 sm:py-[0.15rem] cursor-pointer '>Buy it</button>
         </div>
 
-        <div className="hidden group-hover:block absolute top-[50%] -right-4 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer text-primary">
+        <div className="hidden group-hover:block absolute top-[50%] -left-4  bg-secondary text-2xl rounded-full md:p-2 bg-black/20 text-white cursor-pointer">
+          <BsChevronCompactLeft className="text-primary " onClick={prevSlide} size={40} />
+        </div>
+
+        <div className="hidden group-hover:block absolute top-[50%] -right-4 text-2xl rounded-full md:p-2 bg-secondary text-white cursor-pointer text-primary">
           <BsChevronCompactRight onClick={nextSlide} size={40} />
         </div>
-        <div className="flex top-4 justify-center py-2">
+        <div className="flex  justify-center md:py-2 ">
           {slides.map((slide, slideIndex) => (
             <div
               key={slideIndex}
