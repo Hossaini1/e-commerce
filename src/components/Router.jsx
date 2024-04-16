@@ -16,7 +16,7 @@ import WomensJacke from "../pages/WomensJacke";
 import Error from "../pages/Error";
 import Footer from "./Footer";
 
-import Footer from "./Footer";
+
 
 import PaymentPage from "./PaymentPage";
 import ShoppingCartPage from "./ShoppingCartPage";
