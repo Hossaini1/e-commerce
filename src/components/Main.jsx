@@ -23,7 +23,7 @@ const Main = () => {
   //-------------------------------------
   return (
     <main>
-      <div className=" grid lg:grid-cols-5 md:grid-cols-1 sm:grid-cols-1">
+      <div className=" grid  md:grid-cols-5 sm:grid-cols-1">
         <div className="col-span-1">
           <Sidebar />
         </div>
