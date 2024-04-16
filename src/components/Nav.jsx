@@ -3,12 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 
-
 import ShoppingCartModal from "../components/ShoppingCartModal.jsx";
 import styles from "../styles/Nav.module.css";
 import logo from "../images/haupt.png";
 import { Link } from "react-router-dom";
-
 
 function Nav() {
   const [isActive, setIsActive] = useState(false);
@@ -63,18 +61,20 @@ function Nav() {
               <FontAwesomeIcon icon={faUser} />
             </Link>
           </li>
-        
+
           <li>
             <Link to="/favorite" className={styles.navLink}>
               <FontAwesomeIcon icon={faHeart} />
             </Link>
           </li>
 
+
           
 
 
             {/* Modal Shopping Cart */}
             <li className={styles.navLink} onClick={openModal}>
+
             <FontAwesomeIcon icon={faCartShopping} />
             {cartItemCount > 0 && (
               <div className="cart-item-count">{cartItemCount}</div>
