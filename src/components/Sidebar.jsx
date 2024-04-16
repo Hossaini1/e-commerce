@@ -8,12 +8,13 @@ const Sidebar = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const pages = [
-    { title: "Dresses & Skirts", path: "/dresses " },
-    { title: "Blouses & Shirts", path: "/blouses" },
-    { title: "T-shirts & Tops", path: "/t-shirt&tops" },
-    { title: "Pants & Jeans", path: "/pants" },
-    { title: "Maternity clothes", path: "/maternity clothes" },
-    { title: "Women's jackets", path: "/women's jackets" },
+
+    { title: "Dresses & Skirts", path: "/dressesskirts" },
+    { title: "Blouses & Shirts", path: "/blousesshirts" },
+    { title: "T-shirts & Tops", path: "/t-shirttops" },
+    { title: "Pants & Jeans", path: "/pantsjeans" },
+    { title: "Maternity Clothes", path: "/maternityclothes" },
+    { title: "Women's jackets", path: "/womensjackets" },
     { title: "Shoes", path: "/shoes" },
   ];
 
@@ -49,23 +50,23 @@ const Sidebar = () => {
   }
 
   return (
-    <div className="md:bg-primary md:w-64 md:my-[7rem] md:mx-20">
+    <div className=" md:w-96 h-[90%] md:absolute top-[5.5rem] ">
       <h2
         onClick={toggleCategories}
-        className="font-bold sm:flex sm:justify-center md:text-center text-tertiary md:animate-pulse md:p-5 md:text-2xl"
-        style={{ height: "50px", width: "100%" }}
+        className="font-bold sm:flex sm:justify-center items-center rounded-b-3xl md:text-primary sm:mt-2 md:mt-0 sm:text-tertiary md:bg-tertiary md:animate-pulse md:text-2xl"
+        style={{ height: "10%", width: "100%" }}
       >
         {h2Content}
       </h2>
       <ul
         className={`${
-          showCategories ? "opacity-100" : "opacity-0"
-        } sm:px-5 sm:flex-wrap flex md:flex-col  sm:h-full sm:w-full justify-between `}
+          showCategories ? "block" : "hidden"
+        } md:mt-4 sm:px-5 sm:flex-wrap flex md:flex-col md:max-w-full sm:h-full sm:w-full justify-start md:h-[95%] bg-primary `}
       >
         {pages.map((page, index) => (
           <li
             key={index}
-            className="sm:p-2 md:p-4 md:mt-4 md:text-center cursor-pointer transition ease-out duration-500 hover:shadow-inner-tertiary transform hover:scale-110 hover:bg-tertiary rounded-lg md:shadow-[0_0_10px]   "
+            className=" sm:p-[0.45rem]  md:p-3 md:pl-28 md:mt-5  cursor-pointer transition ease-out duration-500 hover:shadow-inner-tertiary transform hover:scale-110 md:hover:bg-tertiary rounded-lg sm:hover:underline  "
           >
             <Link to={page.path}>{page.title}</Link>
           </li>

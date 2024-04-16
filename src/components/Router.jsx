@@ -17,13 +17,18 @@ import Error from "../pages/Error";
 import Footer from "./Footer";
 
 
+import DetailsPage from "../pages/DetailsPage";
+
+
 import PaymentPage from "./PaymentPage";
 import ShoppingCartPage from "./ShoppingCartPage";
+
 
 
 const Router = () => {
   return (
     <>
+
 
     <Header />
     <Routes>
@@ -31,16 +36,28 @@ const Router = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/favorite" element={<Favorite />} />
       <Route path="/cartshopping" element={<CartShopping />} />
-      <Route path="/listitems" element={<AllListItems />} />
       <Route path="/blouseshirts" element={<BlousesShirts />} />
       <Route path="/dressesskirts" element={<DressesSkirts />} />
       <Route path="/maternityclothes" element={<MaternityClothes />} />
-      <Route path="/pantsJeans" element={<PantsJeans />} />
+      <Route path="/pantsjeans" element={<PantsJeans />} />
       <Route path="/register" element={<Register />} />
       <Route path="/shoes" element={<Shoes />} />
       <Route path="/tshirtstops" element={<TshirtsTops />} />
       <Route path="/womensjacke" element={<WomensJacke />} />
-      <Route path="/AllLisItems" element={<AllListItems />} />
+
+      <Route path="/alllistitems" element={<AllListItems />} />
+
+      
+        <Route path="/payment"element={<PaymentPage />} />
+        <Route path="/shoppingcartpage"element={<ShoppingCartPage />} />
+
+
+      {/* Details Route */}
+      <Route path="/dressesskirts/:id" element={<DetailsPage />} />
+      <Route path="/blouseshirts/:id" element={<DetailsPage />} />
+
+
+      {/* Error Page Route */}
       <Route path="*" element={<Error />} />
     </Routes>
     <Footer />
@@ -49,6 +66,8 @@ const Router = () => {
 
 
 
+
+
 };
-/* text  */
+
 export default Router;

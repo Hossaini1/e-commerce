@@ -4,9 +4,11 @@ import { faHeart, faCartShopping, faHome } from "@fortawesome/free-solid-svg-ico
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 
+
 import ShoppingCartModal from "../components/ShoppingCartModal.jsx";
 import styles from "../styles/Nav.module.css";
 import logo from "../images/haupt.png";
+
 
 const categoryMappings = {
   "dress": "/dresses",
@@ -95,13 +97,17 @@ function Nav() {
             </Link>
           </li>
 
-          <li className={styles.navLink} onClick={openModal}>
-            <div>
-              <FontAwesomeIcon icon={faCartShopping} />
-              {cartItemCount > 0 && (
-                <div className="cart-item-count">{cartItemCount}</div>
-              )}
-            </div>
+
+          
+
+
+            {/* Modal Shopping Cart */}
+            <li className={styles.navLink} onClick={openModal}>
+
+            <FontAwesomeIcon icon={faCartShopping} />
+            {cartItemCount > 0 && (
+              <div className="cart-item-count">{cartItemCount}</div>
+            )}
           </li>
         </div>
       </ul>

@@ -8,17 +8,19 @@ export default {
       tertiary: "#D01345",
       secondaryDark: "#2D2D2D",
       primaryDark: "#EEEEEE",
+      tertiaryLight: "#d0134563",
     },
     extend: {
 
       screens:{
-        "sm":"360px",
-        "md":"960px",
-        "xl":"1280px"
+        "sm":"370px",
+        "md":"980px",
+        
       }
     
 
     },
   },
-  plugins: [],
+ 
 };
+

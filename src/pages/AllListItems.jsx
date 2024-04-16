@@ -6,7 +6,7 @@ const AllListItems = () => {
     {
       "img": "https://images.pexels.com/photos/4668561/pexels-photo-4668561.jpeg"}
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full ">
         <div className="w-full h-full md:mb-2  sm:mb-1">
             <div className="relative">
               <img src={data_1.img} alt="" className="w-[100%] h-[70vw]" /> 

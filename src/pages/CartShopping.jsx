@@ -4,6 +4,7 @@ import CarouselDunne from "../components/CarouselDunne";
 const CartShopping = ({ cartItems }) => {
   return (
     <div>
+      
       <ul>
         {cartItems.map((item, index) => (
           <li key={index}>
@@ -17,4 +18,7 @@ const CartShopping = ({ cartItems }) => {
   );
 };
 
+
 export default CartShopping;
+
+

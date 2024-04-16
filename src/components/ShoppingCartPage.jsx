@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { FaCcVisa, FaCcMastercard, FaCcPaypal } from 'react-icons/fa';
+import { Link } from "react-router-dom";
 
 
 
@@ -23,44 +25,88 @@ const ShoppingCartPage = () => {
   // Function to remove a product from the cart
   const removeProduct = (id) => {
     setProducts(products.filter((product) => product.id !== id));
+
   };
 
+
+  // Function to decrease quantity of a product
+  const decreaseQuantity = (id) => {
+    const updatedProducts = products.map((product) => {
+      if (product.id === id && product.quantity > 1) {
+        return { ...product, quantity: product.quantity - 1 };
+      }
+      return product;
+    });
+    setProducts(updatedProducts);
+  };
+
+  // Function to increase quantity of a product
+  const increaseQuantity = (id) => {
+    const updatedProducts = products.map((product) => {
+      if (product.id === id) {
+        return { ...product, quantity: product.quantity + 1 };
+      }
+      return product;
+    });
+    setProducts(updatedProducts);
+  };
+
+
+    // Function to handle the payment process
+    const handlePayment = () => {
+      // Redirect to the payment page or perform any payment-related actions
+      console.log("Redirecting to the payment page...");
+    };
+
+
+
   return (
-    <div className="container mx-auto mt-10 px-9 py-10">
+    <div className="container mx-auto mt-2 px-9 py-10">
       <h1 className="text-2xl text-center font-bold mb-10">Your Shopping Cart</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
+
+          {/* Displaying products */}
         <div>
           {products.map((product) => (
             <div key={product.id} className="flex items-center justify-between border-b border-tertiary py-4">
               <div className="flex items-center">
-                <img src={`images/${product.id}.jpg`} alt={product.name} className="w-16 h-20 object-cover mr-4" />
+                <img src={`images/${product.id}.jpg`} alt={product.name} className="w-14 h-20 object-cover mr-4" />
                 <div>
                   <p className="font-bold">{product.name}</p>
                   <p>{product.price}$</p>
                 </div>
               </div>
               <div className="flex items-center">
-                <button
-                  onClick={() => removeProduct(product.id)}
-                  className="bg-gray-200 text-gray-600 hover:bg-gray-300 px-2 py-1 rounded-full mr-1"
-                >
-                  <FontAwesomeIcon icon={faTrashAlt} />
-                </button>
+                
                 <div className="flex items-center">
-                  <button className="bg-gray-200 text-gray-600 hover:bg-gray-300 px-2 py-1 rounded-full mr-2">
+                  <button onClick={() => decreaseQuantity(product.id)}
+                  className="bg-primary text-secendaryDark px-2  mr-4  border border-secondary">
                     -
                   </button>
                   <p>{product.quantity}</p>
-                  <button className="bg-gray-200 text-gray-600 hover:bg-gray-300 px-2 py-1 rounded-full ml-2">
+                  <button  onClick={() => increaseQuantity(product.id)}
+                  className="bg-gray-200 text-secendaryDark  px-2  mr-3 ml-4 border border-secondary">
                     +
                   </button>
+
+                  <button
+                  onClick={() => removeProduct(product.id)}
+                  className="bg-gray-200 text-secondaryDark hover:bg-tertiary px-2 py-1 rounded-full ml-5"
+                >
+                  <FontAwesomeIcon icon={faTrashAlt} />
+                </button>
+
+
+
+
+
                 </div>
               </div>
             </div>
           ))}
         </div>
         <div>
-          <div className="border border-secondary bg-primaryDark rounded-md p-10">
+          <div className="border border-tertiary bg-primaryDark rounded-md p-10 mt-10">
             <div className="flex justify-between mb-4">
               <p className="text-lg font-bold">Total</p>
               <p className="text-lg font-bold">{getTotalPrice()} $</p>
@@ -85,20 +131,28 @@ const ShoppingCartPage = () => {
                 placeholder="Enter Your Voucher Code"
               />
             </div>
-            <button className="bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-tertiary">
+            <button className="bg-secondary text-primary py-2 px-6 border-tertiary rounded-md hover:bg-tertiary">
               Apply
             </button>
+
+
+              {/* Payment button */}
+              <Link to="/payment" className="bg-tertiary text-primary py-2 px-6 ml-[30rem]  rounded-md  hover:bg-secondaryDark ">
+              Go To Pay
+              </Link>
+           
           </div>
 
           {/* "We Accept:"  section */}
-          <div className="mt-10 flex justify-center items-center">
-            <p className="mr-8">We Accept:</p>
-            {/* Add logos or payment methods here */}
-            <img src="visa-logo.png" alt="Visa" className="w-8 h-8 mr-2" />
-            <img src="mastercard-logo.png" alt="Mastercard" className="w-8 h-8 mr-2" />
-            <img src="paypal-logo.png" alt="PayPal" className="w-8 h-8" />
+          <div className="mt-10 flex justify-center  items-center">
+            <p className="mr-10 font-bold ">We Accept:</p>
 
-            {/* Add more payment method logos as needed */}
+            {/* Logos and payment methods here */}
+            <FaCcVisa  alt="Visa" className="w-10 h-10 mr-3 border-b border-tertiary " />
+            <FaCcMastercard alt="Mastercard" className="w-10 h-10 mr-3 border-b border-tertiary  " />
+            <FaCcPaypal  alt="PayPal" className="w-10 h-10 border-b border-tertiary " />
+
+            
           </div>
         </div>
       </div>
