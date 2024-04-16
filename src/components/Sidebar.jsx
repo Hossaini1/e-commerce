@@ -8,7 +8,7 @@ const Sidebar = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const pages = [
-    { title: "Dresses & Skirts", path: "/dresses " },
+    { title: "Dresses & Skirts", path: "/dressesskirts" },
     { title: "Blouses & Shirts", path: "/blouses" },
     { title: "T-shirts & Tops", path: "/t-shirt&tops" },
     { title: "Pants & Jeans", path: "/pants" },
