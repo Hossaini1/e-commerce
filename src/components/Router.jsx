@@ -41,7 +41,7 @@ const Router = () => {
       <Route path="/shoes" element={<Shoes />} />
       <Route path="/tshirtstops" element={<TshirtsTops />} />
       <Route path="/womensjacke" element={<WomensJacke />} />
-      <Route path="/allLisItems" element={<AllListItems />} />
+      <Route path="/alllistitems" element={<AllListItems />} />
 
       {/* Details Route */}
       <Route path="/dressesskirts/:id" element={<DetailsPage />} />
