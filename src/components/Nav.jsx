@@ -70,21 +70,15 @@ function Nav() {
             </Link>
           </li>
 
-          <li onClick={openModal}></li>
+          
 
-          <li onClick={toggleActiveClass}>
-            <Link to="/cartshopping" className={styles.navLink}>
-              <FontAwesomeIcon icon={faCartShopping} />
-            </Link>
 
             {/* Modal Shopping Cart */}
-          <li className={styles.navLink} onClick={openModal}>
-            <div>
-              <FontAwesomeIcon icon={faCartShopping} />
-              {cartItemCount > 0 && (
-                <div className="cart-item-count">{cartItemCount}</div>
-              )}
-            </div>
+            <li className={styles.navLink} onClick={openModal}>
+            <FontAwesomeIcon icon={faCartShopping} />
+            {cartItemCount > 0 && (
+              <div className="cart-item-count">{cartItemCount}</div>
+            )}
           </li>
         </div>
       </ul>
