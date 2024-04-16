@@ -15,7 +15,7 @@ export default {
       screens:{
         "sm":"360px",
         "md":"960px",
-        "xl":"1280px"
+        
       }
     
 

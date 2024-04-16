@@ -1,5 +1,6 @@
 import { createContext, useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 
 const Context = createContext();
@@ -59,7 +60,23 @@ export function ParentContext({ children }) {
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
   };
-  // pages link und toggle categories für sidebar
+  //  Api Abruf für dunne carousel
+  const [dataCarousel, setDataCarousel] = useState([]);
+  const url = "https://dummyjson.com/products/category/womens-dresses";
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(url);
+      setDataCarousel(response.data.products);
+    } catch (error) {
+      console.log("Error fetching data:", error);
+    }
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  
  
 
   
@@ -69,6 +86,7 @@ export function ParentContext({ children }) {
       value={{
         handleClickToSeeMore,
         settings,
+        dataCarousel,
         
      
       }}
