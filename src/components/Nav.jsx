@@ -68,7 +68,13 @@ function Nav() {
             </Link>
           </li>
 
-          <li className={styles.navLink} onClick={openModal}>
+
+          
+
+
+            {/* Modal Shopping Cart */}
+            <li className={styles.navLink} onClick={openModal}>
+
             <FontAwesomeIcon icon={faCartShopping} />
             {cartItemCount > 0 && (
               <div className="cart-item-count">{cartItemCount}</div>

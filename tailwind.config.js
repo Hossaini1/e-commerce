@@ -7,15 +7,23 @@ export default {
       secondary: "#525050",
       tertiary: "#D01345",
       secondaryDark: "#2D2D2D",
+
       primaryDark: "#EEEEEE",
+
       tertiaryLight: "#d0134563",
-    },
+    }, 
     extend: {
-      screens: {
-        sm: "400px",
-        md: "960px",
-      },
+
+
+      screens:{
+        "sm":"370px",
+        "md":"980px",
+        
+      }
+    
+
     },
   },
+  
 
 };
