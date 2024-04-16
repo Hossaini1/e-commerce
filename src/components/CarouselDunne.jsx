@@ -31,8 +31,10 @@ import Store from "../store/Context";
 // ];
 const CarouselDunne = () => {
 
+
   const { settings, handleClickToSeeMore,dataCarousel } = Store();
-  console.log(dataCarousel);
+  
+
   return (
     <div className=" sm:w-[80%] md:w-[95%] m-auto ">
       <div className="mt-30  text-center">

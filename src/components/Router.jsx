@@ -15,7 +15,9 @@ import TshirtsTops from "../pages/TshirtsTops";
 import WomensJacke from "../pages/WomensJacke";
 import Error from "../pages/Error";
 import Footer from "./Footer";
+
 import DetailsPage from "../pages/DetailsPage";
+
 
 
 import PaymentPage from "./PaymentPage";
@@ -26,6 +28,7 @@ import ShoppingCartPage from "./ShoppingCartPage";
 const Router = () => {
   return (
     <>
+
 
     <Header />
     <Routes>
@@ -41,7 +44,13 @@ const Router = () => {
       <Route path="/shoes" element={<Shoes />} />
       <Route path="/tshirtstops" element={<TshirtsTops />} />
       <Route path="/womensjacke" element={<WomensJacke />} />
+
       <Route path="/alllistitems" element={<AllListItems />} />
+
+      
+        <Route path="/payment"element={<PaymentPage />} />
+        <Route path="/shoppingcartpage"element={<ShoppingCartPage />} />
+
 
       {/* Details Route */}
       <Route path="/dressesskirts/:id" element={<DetailsPage />} />
@@ -58,6 +67,7 @@ const Router = () => {
 
 
 
+
 };
-/* text  */
+
 export default Router;
