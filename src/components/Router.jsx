@@ -18,7 +18,6 @@ import Footer from "./Footer";
 import DetailsPage from "../pages/DetailsPage";
 
 
-
 import PaymentPage from "./PaymentPage";
 import ShoppingCartPage from "./ShoppingCartPage";
 
@@ -55,6 +54,7 @@ const Router = () => {
     <Footer />
   </>
 );
+
 
 
 
