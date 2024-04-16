@@ -8,12 +8,13 @@ const Sidebar = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const pages = [
-    { title: "Dresses & Skirts", path: "/dressesskirts" },
-    { title: "Blouses & Shirts", path: "/blouses" },
-    { title: "T-shirts & Tops", path: "/t-shirt&tops" },
-    { title: "Pants & Jeans", path: "/pants" },
-    { title: "Maternity clothes", path: "/maternity clothes" },
-    { title: "Women's jackets", path: "/women's jackets" },
+
+    { title: "Dresses & Skirts", path: "/dressesskrits" },
+    { title: "Blouses & Shirts", path: "/blousesshirts" },
+    { title: "T-shirts & Tops", path: "/t-shirttops" },
+    { title: "Pants & Jeans", path: "/pantsjeans" },
+    { title: "Maternity Clothes", path: "/maternityclothes" },
+    { title: "Women's jackets", path: "/womensjackets" },
     { title: "Shoes", path: "/shoes" },
   ];
 
