@@ -1,7 +1,6 @@
 import Sidebar from "./Sidebar";
 import Carousel from "./Carousel";
 import CarouselDunne from "./CarouselDunne";
-import Footer from "./Footer";
 import { useState } from "react";
 import CartShopping from "../pages/CartShopping";
 
@@ -28,14 +27,10 @@ const Main = () => {
           <Sidebar />
         </div>
         <div className="md:col-span-4 sm:col-span-5">
-          <Carousel slides={slides} />
+          <Carousel />
         </div>
       </div>
 
-
-
-
-     
 
       <div>
         {/* added CartShopping and addToCart, cartItems */}
