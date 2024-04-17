@@ -1,8 +1,24 @@
-# React + Vite
+# PAVAWS E-Commerce Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The 'PAVAWS' E-Commerce Project  is a project by DCI students :computer:, namely: 
+- Ali Hossaini [Link](https://github.com/Hossaini1)
+- Anastasios Aintinidis [Link](https://github.com/Taseos)
+- Viktoriia Kaliberda [Link](https://github.com/kaliberda97)
+- Samira Hosseini [Link](https://github.com/samiraHs)
+- Patrycja Wozniewicz [Link](https://github.com/Patison82)
+- Andreas Stroianetki [Link](https://github.com/Sandreass)
 
-Currently, two official plugins are available:
+The project includes:
+- Product categories
+- Current promotions
+- Current products
+- Product carousel
+- Customer feedback
+- Social media links
+- Customer account
+- Product search by categories
+- Shopping cart
+- Product payment
+- Favorites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![start page ](./src/images/readme.png)

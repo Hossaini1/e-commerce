@@ -141,8 +141,8 @@
 
   .close {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 120px;
+    right: 30px;
     font-size: 30px;
     cursor: pointer;
     color: #D01345;
