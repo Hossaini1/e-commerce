@@ -2,7 +2,10 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Store from "../store/Context";
+
+
 import { Link } from "react-router-dom";
+
 
 // const data = [
 //   {
@@ -32,6 +35,7 @@ import { Link } from "react-router-dom";
 //   },
 // ];
 
+
 const CarouselDunne = () => {
 
   const { settings, handleClickToSeeMore, dataCarousel, setDetail, detail } =
@@ -40,6 +44,18 @@ const CarouselDunne = () => {
   const addDetail = (item) => {
     setDetail(item);
   };
+
+
+  const { settings, handleClickToSeeMore,dataCarousel, setCards,cards  } = Store();
+  const handleAddToCart =(item)=>{
+    const object = {...item, quantity: 1}
+
+    setCards([...cards,object])
+  }
+
+
+
+
 
 
   return (
@@ -71,8 +87,10 @@ const CarouselDunne = () => {
                 <p className="font-bold sm:mt-1 ">{item.price} $</p>
                 {/* Add to cart btn, and i deleted opacity from the card*/}
                 <button
-                  className="bg-primary text-secondaryDark hover:bg-tertiary sm:mb-2 md:mb-4 font-bold py-2 px-4 rounded mt-2"
-                  onClick={() => handleAddToCart(item.name)}
+
+                  className="bg-secondaryDark hover:bg-tertiary mb-3 text-primary font-bold py-2 px-4 rounded mt-2"
+                  onClick={() => handleAddToCart(item)}
+
                 >
                   Add to Cart
                 </button>

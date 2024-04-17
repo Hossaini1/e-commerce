@@ -2,6 +2,8 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import Store from "../store/Context";
+import { useNavigate } from "react-router-dom";
 
 const ShoppingCartModal = ({
   isOpen,
@@ -10,52 +12,70 @@ const ShoppingCartModal = ({
   cartItemCount,
 }) => {
   const [products, setProducts] = useState([
-    { name: "Product 1", price: 10, quantity: 0 },
-    { name: "Product 2", price: 15, quantity: 0 },
-    { name: "Product 3", price: 20, quantity: 0 },
-    { name: "Product 4", price: 25, quantity: 0 },
+    {
+      image: "product1.jpg",
+      name: "Product 1",
+      price: 10,
+      quantity: 0,
+      color: "Red",
+      size: "M",
+    },
+    {
+      image: "product2.jpg",
+      name: "Product 2",
+      price: 15,
+      quantity: 0,
+      color: "Blue",
+      size: "L",
+    },
+    {
+      image: "product3.jpg",
+      name: "Product 3",
+      price: 20,
+      quantity: 0,
+      color: "Green",
+      size: "S",
+    },
+    {
+      image: "product4.jpg",
+      name: "Product 4",
+      price: 25,
+      quantity: 0,
+      color: "Yellow",
+      size: "XL",
+    },
   ]);
 
-  // Calculate total price of all products
-  const getTotalPrice = () => {
-    return products.reduce(
-      (total, product) => total + product.price * product.quantity,
-      0
-    );
+  /* import cards from store  */
+  const { cards, setCards, dataCarousel } = Store();
+
+  /* navigate router */
+  const navigate = useNavigate();
+
+  /* remove product */
+  const removeItem = (gameId) => {
+    const updatedFavorites = cards.filter((item) => item.id !== gameId);
+    setCards(updatedFavorites);
   };
 
-  // Increase quantity of a product
-  const increaseQuantity = (index) => {
-    const updatedProducts = [...products];
-    updatedProducts[index].quantity += 1;
-    setProducts(updatedProducts);
+  // handle quantity
+  function handleUpdateCartItemQuantity(gameId, amount) {
+    const updatedFavorites = cards.map((item) => {
+      if (item.id === gameId) {
+        const selectedGame = dataCarousel.find((game) => game.id == gameId);
 
-    setCartItemCount((prevCount) => prevCount + 1); // Update the number of products in the cart
-  };
-
-  // Decrease quantity of a product
-  const decreaseQuantity = (index) => {
-    const updatedProducts = [...products];
-    if (updatedProducts[index].quantity > 1) {
-      updatedProducts[index].quantity -= 1;
-      setProducts(updatedProducts);
-
-      setCartItemCount((prevCount) => prevCount - 1); // Update the number of products in the cart
-    }
-  };
-
-  // Remove a product from the cart
-  const removeProduct = (index) => {
-    const updatedProducts = [...products];
-    updatedProducts.splice(index, 1);
-    setProducts(updatedProducts);
-
-    setCartItemCount((prevCount) => prevCount - 1); // Update the number of products in the cart
-  };
+        const newQuantity = item.quantity + amount;
+        const newPrice = newQuantity * selectedGame.price;
+        return { ...item, quantity: newQuantity, price: newPrice };
+      }
+      return item;
+    });
+    setCards(updatedFavorites);
+  }
 
   // Redirection to the Shopping Cart page
   const handleCheckout = () => {
-    window.location.href = "/shoppingcartpage"; // path to '/shoppingcart' page
+    navigate("/shoppingcartpage");
   };
 
   // Render the shopping cart modal
@@ -83,56 +103,73 @@ const ShoppingCartModal = ({
             )}
 
             {/* Positions in the cart */}
-            <h2 className="text-2xl text-center rfont-bold mb-9 m-8 text-primary">
+            <h2 className="text-2xl text-center rfont-bold  m-2 text-primary ">
               Your Shopping Cart
             </h2>
-            {products.map((product, index) => (
-              <div
-                key={index}
-                className="flex justify-between  items-center mb-2"
-              >
-                <div className=" text-primaryDark font-bold">
-                  <p>{product.name}</p>
-                  <p>{product.price} $</p>
-                </div>
-
-                {/* Plus & minus buttons */}
-                <div className="flex items-center  text-secondaryDark">
-                  <button
-                    onClick={() => decreaseQuantity(index)}
-                    className="bg-secondaryDark text-primary text-1xl px-4 py-1 rounded-full mr-2 hover:bg-gray-200"
+            {cards.length > 0
+              ? cards.map((product, index) => (
+                  <div
+                    key={index}
+                    className="flex justify-between  items-center mb-2"
                   >
-                    {" "}
-                    -{" "}
-                  </button>
-                  <span className="text-primary">{product.quantity} </span>
-                  <button
-                    onClick={() => increaseQuantity(index)}
-                    className="bg-secondaryDark text-primary px-4 py-1 rounded-full ml-2 hover:bg-gray-200 "
-                  >
-                    {" "}
-                    +{" "}
-                  </button>
+                    <div className="flex items-center text-primary  mr-3">
+                      <img
+                        src={product.thumbnail}
+                        alt={product.title}
+                        className="w-14 h-20 object-cover mr-4 "
+                      />
+                      <div>
+                        <p className="font-bold mt-4 ">{product.title}</p>
+                        <p className="text-">{product.price} $</p>
+                        <p className="text-sm  ">Color: {product.color}</p>
+                        <p className="text-sm">Size: {product.size}</p>
+                      </div>
+                    </div>
 
-                  {/* Icon for deleting the selected product */}
-                  <FontAwesomeIcon
-                    icon={faTrashAlt}
-                    onClick={() => removeProduct(index)}
-                    className=" ml-4 cursor-pointer  hover:text-primary transition-colors duration-300"
-                  />
-                </div>
-              </div>
-            ))}
+                    {/* Plus & minus buttons */}
+                    <div className="flex items-center  text-secondaryDark ">
+                      <button 
+                        onClick={() =>
+                          handleUpdateCartItemQuantity(product.id, -1)
+                        }
+                        className="bg-secondaryDark text-primary text-1xl py-1 rounded-full mr-2 hover:bg-gray-200 sm:w "
+                      >
+                         {" "}
+                        -{" "}
+                      </button>
+
+                      <span className="text-primary">{product.quantity} </span>
+
+                      <button
+                        onClick={() =>
+                          handleUpdateCartItemQuantity(product.id, 1)
+                        }
+                        className="bg-secondaryDark text-primary  py-1 rounded-full ml-2 hover:bg-gray-200 "
+                      >
+                        {" "}
+                        +{" "}
+                      </button>
+
+                      {/* Icon for deleting the selected product */}
+                      <FontAwesomeIcon
+                        icon={faTrashAlt}
+                        onClick={() => removeItem(product.id)}
+                        className="ml-4 cursor-pointer  hover:text-primary transition-colors duration-300"
+                      />
+                    </div>
+                  </div>
+                ))
+              : ""}
 
             {/* Total price */}
-            <div className="flex  text-primaryDark  justify-center space-x-10 items-center mt-7 ">
+            <div className="flex  text-primaryDark  justify-center space-x- items-center mt-3 ">
               <p className="font-bold text-right  justify content-between">
-                Total : {getTotalPrice()} ${" "}
+                Total : {cards.reduce((acc, card) => acc + card.price, 0)} $
               </p>
             </div>
 
             {/* Buttons - More Shopping & Go To Basket */}
-            <div className="flex justify-end mt-5 px-6 ">
+            <div className="flex justify-center mt-3   ">
               <Link to="/">
                 <button
                   className="bg-secondaryDark  text-primary hover:bg-tertiary  px-4  py-2 rounded mr-2  cursor-pointer transition ease-out duration-500
@@ -144,7 +181,7 @@ const ShoppingCartModal = ({
               </Link>
 
               <button
-                className="bg-tertiary text-primary px-4 py-2 rounded  cursor-pointer transition ease-out duration-300 hover:shadow-inner-tertiarytransform 
+                className="bg-tertiary text-primary px-2 py-2 rounded     cursor-pointer transition ease-out duration-300 hover:shadow-inner-tertiarytransform 
                 hover:scale-90 hover:bg-tertiary shadow-[0_0_5px] "
                 onClick={handleCheckout}
               >

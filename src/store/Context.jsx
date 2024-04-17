@@ -5,7 +5,13 @@ import axios from "axios";
 const Context = createContext();
 
 
+export function ParentContext({ children }) {
+  const [cards,setCards] = useState([])
+
+
+
   const [favorites, setFavorites] = useState([]);
+
 
 
   // UseNavigate für AllListItems Komponente
@@ -137,10 +143,15 @@ const Context = createContext();
         settings,
         dataCarousel,
 
+        cards,
+        setCards
+
+
         favorites,
         addToFavorites,
         removeFromFavorites,
         isFavorite
+
         
      
 
