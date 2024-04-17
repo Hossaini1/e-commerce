@@ -3,8 +3,10 @@ import { useEffect, useState } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
 import { Link } from "react-router-dom";
+import Store from "../store/Context";
 
 export default function Carousel() {
+  const {slides}=Store()
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const prevSlide = () => {
