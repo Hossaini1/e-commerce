@@ -12,6 +12,7 @@ import ShoppingCartModal from "../components/ShoppingCartModal.jsx";
 import styles from "../styles/Nav.module.css";
 import logo from "../images/haupt.png";
 
+
 import Store from "../store/Context";
 
 function Nav() {
