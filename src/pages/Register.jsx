@@ -1,24 +1,20 @@
 import { useState } from "react";
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import styles from "../styles/Register.module.css";
 
 export const Register = (props) => {
-  const [email, setEmail] = useState('');
-  const [pass, setPass] = useState('');
-  const [name, setName] = useState('');
-  const [mobile, setMobile] = useState('');
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
+  const [name, setName] = useState("");
+  const [mobile, setMobile] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(email);
   };
-
-  
 
   const toggleShowPassword = () => {
     setShowPassword(!showPassword);
@@ -28,7 +24,9 @@ export const Register = (props) => {
     <div className={styles.authFormContainer}>
       <h1 className={styles.title}>Create your account</h1>
       <form className={styles.loginForm} onSubmit={handleSubmit}>
-        <label htmlFor="email" className={styles.label}>Your E-Mail</label>
+        <label htmlFor="email" className={styles.label}>
+          Your E-Mail
+        </label>
         <input
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -39,7 +37,9 @@ export const Register = (props) => {
           className={styles.input}
         />
 
-        <label htmlFor="name" className={styles.label}>Your Name</label>
+        <label htmlFor="name" className={styles.label}>
+          Your Name
+        </label>
         <input
           value={name}
           onChange={(e) => setName(e.target.value)}
@@ -50,7 +50,9 @@ export const Register = (props) => {
           className={styles.input}
         />
 
-        <label htmlFor="mobile" className={styles.label}>Mobile Number</label>
+        <label htmlFor="mobile" className={styles.label}>
+          Mobile Number
+        </label>
         <input
           value={mobile}
           onChange={(e) => setMobile(e.target.value)}
@@ -62,7 +64,9 @@ export const Register = (props) => {
         />
 
         <div className={styles.passwordContainer}>
-          <label htmlFor="password" className={styles.label}>Password</label>
+          <label htmlFor="password" className={styles.label}>
+            Password
+          </label>
           <input
             value={pass}
             onChange={(e) => setPass(e.target.value)}
@@ -72,22 +76,34 @@ export const Register = (props) => {
             name="password"
             className={styles.input}
           />
-          <FontAwesomeIcon 
-            icon={showPassword ? faEye : faEyeSlash} 
-            className={styles.eyeIcon} 
-            onClick={toggleShowPassword} 
+          <FontAwesomeIcon
+            icon={showPassword ? faEye : faEyeSlash}
+            className={styles.eyeIcon}
+            onClick={toggleShowPassword}
           />
         </div>
 
         <div className={styles.checkboxContainer}>
-          <input type="checkbox" id="rememberMe" name="rememberMe" className={styles.checkbox} />
-          <label htmlFor="rememberMe" className={styles.label}>I would like to receive offers on discounts and new products</label>
+          <input
+            type="checkbox"
+            id="rememberMe"
+            name="rememberMe"
+            className={styles.checkbox}
+          />
+          <label htmlFor="rememberMe" className={styles.label}>
+            I would like to receive offers on discounts and new products
+          </label>
         </div>
 
-        <button type="submit" className={styles.button}>Create account</button>
+        <button type="submit" className={styles.button}>
+          Create account
+        </button>
       </form>
 
-      <button className={styles.linkButton} onClick={() => props.onFormSwitch('login')}>
+      <button
+        className={styles.linkButton}
+        onClick={() => props.onFormSwitch("login")}
+      >
         <Link to="/login">Sign In</Link>
       </button>
     </div>

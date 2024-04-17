@@ -1,14 +1,13 @@
-
-import { useState } from 'react';
-import { FaHeart,FaRegHeart } from 'react-icons/fa';
-import DressContextApi from '../store/DressesContext';
-import Store from '../store/Context';
+import { useState } from "react";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
+import DressContextApi from "../store/DressesContext";
+import Store from "../store/Context";
 
 const DressesSkirts = () => {
- const { data } = DressContextApi();
- const { addToFavorites,isFavorite } = Store();
+  const { data } = DressContextApi();
+  const { addToFavorites, isFavorite } = Store();
 
- console.log(data);
+  console.log(data);
 
   const [cart, setCart] = useState([]);
 
@@ -20,17 +19,35 @@ const DressesSkirts = () => {
     <div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {data.map((item, index) => (
-          <div key={index} className="bg-secondary m-5 mt-5 shadow-md rounded-lg p-4">
-            <img src={item.thumbnail} alt={item.title} className="h-52 w-full object-cover object-top mb-4" />
+          <div
+            key={index}
+            className="bg-secondary m-5 mt-5 shadow-md rounded-lg p-4"
+          >
+            <img
+              src={item.thumbnail}
+              alt={item.title}
+              className="h-52 w-full object-cover object-top mb-4"
+            />
             <div className="flex justify-between items-center mb-2">
-              <h2 className="text-lg font-semibold text-primary">{item.title}</h2>
-              <button onClick={() => addToFavorites(item)} className="text-primary hover:text-tertiary">
-              {isFavorite(item.id) ? <FaHeart className="h-6 w-6 text-tertiary  " /> : <FaRegHeart className="h-6 w-6 " />}
-               
+              <h2 className="text-lg font-semibold text-primary">
+                {item.title}
+              </h2>
+              <button
+                onClick={() => addToFavorites(item)}
+                className="text-primary hover:text-tertiary"
+              >
+                {isFavorite(item.id) ? (
+                  <FaHeart className="h-6 w-6 text-tertiary  " />
+                ) : (
+                  <FaRegHeart className="h-6 w-6 " />
+                )}
               </button>
             </div>
             <p className="text-gray-700 text-primary">{item.price} $</p>
-            <button onClick={() => addToCart(item)} className="mt-4 bg-primary hover:bg-tertiary text-white font-bold py-2 px-4 rounded">
+            <button
+              onClick={() => addToCart(item)}
+              className="mt-4 bg-primary hover:bg-tertiary text-white font-bold py-2 px-4 rounded"
+            >
               Add to Cart
             </button>
           </div>
