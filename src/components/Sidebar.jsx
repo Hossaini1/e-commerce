@@ -54,7 +54,7 @@ const Sidebar = () => {
       <h2
         onClick={toggleCategories}
         className="font-bold sm:flex sm:justify-center items-center rounded-b-3xl md:text-primary sm:mt-2 md:mt-0 sm:text-tertiary md:bg-tertiary md:animate-pulse md:text-2xl"
-        style={{ height: "10%", width: "100%" }}
+        style={{ height: "8%", width: "100%" }}
       >
         {h2Content}
       </h2>
