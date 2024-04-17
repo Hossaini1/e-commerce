@@ -128,13 +128,13 @@ const ShoppingCartModal = ({
 
                     {/* Plus & minus buttons */}
                     <div className="flex items-center  text-secondaryDark ">
-                      <button 
+                      <button
                         onClick={() =>
                           handleUpdateCartItemQuantity(product.id, -1)
                         }
                         className="bg-secondaryDark text-primary text-1xl p-2 rounded-full mr-2 hover:bg-gray-200  "
                       >
-                         {" "}
+                        {" "}
                         -{" "}
                       </button>
 

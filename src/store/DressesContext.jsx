@@ -20,8 +20,7 @@ export const DressesContext = ({ children }) => {
   }, []);
 
   return (
-    <dressContext.Provider value={{ data }}>
-      {children}</dressContext.Provider>
+    <dressContext.Provider value={{ data }}>{children}</dressContext.Provider>
   );
 };
 

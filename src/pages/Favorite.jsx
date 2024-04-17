@@ -1,51 +1,9 @@
-import { useState, useEffect } from 'react';
-import styles from '../styles/Favorite.module.css';
-import Store from '../store/Context';
-
-
+import { useState, useEffect } from "react";
+import styles from "../styles/Favorite.module.css";
+import Store from "../store/Context";
 
 function Favorite() {
   const { favorites, removeFromFavorites } = Store();
- /*  const [wishlistItems, setWishlistItems] = useState([]); */
- /*  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('https://dummyjson.com/products/category/womens-dresses');
-        const data = await response.json();
-
-        const formattedItems = data.map(item => ({
-          id: item.product_id,
-          name: item.product_name,
-          price: item.product_price,
-          image: item.product_image_url,
-          info: item.product_description,
-        }));
-
-        setWishlistItems(formattedItems);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchData();
-  }, []);   
- */
-
-  /*function Favorite() {
-    const [wishlistItems, setWishlistItems] = useState([
-      { id: 1, name: 'Item blabla 1', price: 10.99, image: 'https://i.pinimg.com/originals/70/6a/97/706a97a963fd0d5510c2d817332c932c.jpg'},
-      { id: 2, name: 'Item blabla 2', price: 9.99, image: 'https://i.pinimg.com/originals/70/6a/97/706a97a963fd0d5510c2d817332c932c.jpg'},
-      { id: 3, name: 'Item blabla 3', price: 11.99, image: 'https://i.pinimg.com/originals/70/6a/97/706a97a963fd0d5510c2d817332c932c.jpg'},
-      { id: 4, name: 'Item blabla 4', price: 12.99, image: 'https://i.pinimg.com/originals/70/6a/97/706a97a963fd0d5510c2d817332c932c.jpg'},
-    ]);*/
-  
-/*    const addToWishlist = (item) => {
-    setWishlistItems([...wishlistItems, item]);
-  };
-
-  const removeFromWishlist = (item) => {
-    setWishlistItems(wishlistItems.filter((existingItem) => existingItem.id !== item.id));
-  }; */
 
   return (
     <div className={styles.wishlist}>
@@ -54,18 +12,34 @@ function Favorite() {
       {favorites.length === 0 ? (
         <div className={styles.emptyWishlist}>
           <h2 className={styles.emptyTitle}>Your wishlist is empty.</h2>
-          <p className={styles.emptyText}>Save the items you like most so you don't lose sight of them.</p>
-          <button className={styles.getInspiredButton} onClick={() => alert('Discover more')}>Discover more</button> 
+          <p className={styles.emptyText}>
+            Save the items you like most so you don't lose sight of them.
+          </p>
+          <button
+            className={styles.getInspiredButton}
+            onClick={() => alert("Discover more")}
+          >
+            Discover more
+          </button>
         </div>
       ) : (
         <div className={styles.wishlistItems}>
           {favorites.map((item) => (
             <div className={styles.wishlistItem} key={item.id}>
-              <img src={item.thumbnail} alt={item.name} className = {`${styles.itemImage} object-cover object-top`} />
+              <img
+                src={item.thumbnail}
+                alt={item.name}
+                className={`${styles.itemImage} object-cover object-top`}
+              />
               <div className={styles.itemDetails}>
                 <h3 className={styles.itemName}>{item.title}</h3>
                 <p className={styles.itemPrice}>€{item.price}</p>
-                <button className={styles.removeButton} onClick={() => removeFromFavorites(item.id)}>Remove</button>
+                <button
+                  className={styles.removeButton}
+                  onClick={() => removeFromFavorites(item.id)}
+                >
+                  Remove
+                </button>
               </div>
               <div className={styles.itemInfo}>
                 <p>{item.info}</p>
