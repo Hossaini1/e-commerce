@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import styles from '../styles/Favorite.module.css';
-
+import Store from '../store/Context';
 
 
 
 function Favorite() {
-  const [wishlistItems, setWishlistItems] = useState([]);
-  useEffect(() => {
+  const { favorites, removeFromFavorites } = Store();
+ /*  const [wishlistItems, setWishlistItems] = useState([]); */
+ /*  useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch('https://dummyjson.com/products/category/womens-dresses');
@@ -28,7 +29,7 @@ function Favorite() {
 
     fetchData();
   }, []);   
-
+ */
 
   /*function Favorite() {
     const [wishlistItems, setWishlistItems] = useState([
@@ -38,19 +39,19 @@ function Favorite() {
       { id: 4, name: 'Item blabla 4', price: 12.99, image: 'https://i.pinimg.com/originals/70/6a/97/706a97a963fd0d5510c2d817332c932c.jpg'},
     ]);*/
   
-  const addToWishlist = (item) => {
+/*    const addToWishlist = (item) => {
     setWishlistItems([...wishlistItems, item]);
   };
 
   const removeFromWishlist = (item) => {
     setWishlistItems(wishlistItems.filter((existingItem) => existingItem.id !== item.id));
-  };
+  }; */
 
   return (
     <div className={styles.wishlist}>
       <h1 className={styles.title}>Wishlist</h1>
 
-      {wishlistItems.length === 0 ? (
+      {favorites.length === 0 ? (
         <div className={styles.emptyWishlist}>
           <h2 className={styles.emptyTitle}>Your wishlist is empty.</h2>
           <p className={styles.emptyText}>Save the items you like most so you don't lose sight of them.</p>
@@ -58,13 +59,13 @@ function Favorite() {
         </div>
       ) : (
         <div className={styles.wishlistItems}>
-          {wishlistItems.map((item) => (
+          {favorites.map((item) => (
             <div className={styles.wishlistItem} key={item.id}>
-              <img src={item.image} alt={item.name} className={styles.itemImage} />
+              <img src={item.thumbnail} alt={item.name} className = {`${styles.itemImage} object-cover object-top`} />
               <div className={styles.itemDetails}>
-                <h3 className={styles.itemName}>{item.name}</h3>
+                <h3 className={styles.itemName}>{item.title}</h3>
                 <p className={styles.itemPrice}>€{item.price}</p>
-                <button className={styles.removeButton} onClick={() => removeFromWishlist(item)}>Remove</button>
+                <button className={styles.removeButton} onClick={() => removeFromFavorites(item.id)}>Remove</button>
               </div>
               <div className={styles.itemInfo}>
                 <p>{item.info}</p>
