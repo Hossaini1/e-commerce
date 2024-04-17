@@ -47,8 +47,8 @@ const Router = () => {
         <Route path="/shoppingcartpage" element={<ShoppingCartPage />} />
 
         {/* Details Route */}
-        <Route path="/dressesskirts/:id" element={<DetailsPage />} />
-        <Route path="/blouseshirts/:id" element={<DetailsPage />} />
+        {/* <Route path="/dressesskirts/:id" element={<DetailsPage />} />
+        <Route path="/blouseshirts/:id" element={<DetailsPage />} /> */}
 
         {/* Error Page Route */}
         <Route path="*" element={<Error />} />
