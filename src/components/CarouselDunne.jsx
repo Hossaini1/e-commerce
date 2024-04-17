@@ -4,10 +4,6 @@ import "slick-carousel/slick/slick-theme.css";
 import Store from "../store/Context";
 import { Link } from "react-router-dom";
 
-const addDetail = (item) => {
-  setDetail(item);
-};
-
 const data = [
   {
     img: "https://fastly.picsum.photos/id/7/4728/3168.jpg?hmac=c5B5tfYFM9blHHMhuu4UKmhnbZoJqrzNOP9xjkV4w3o",
@@ -39,6 +35,10 @@ const data = [
 const CarouselDunne = () => {
   const { settings, handleClickToSeeMore, dataCarousel, setDetail, detail } =
     Store();
+
+  const addDetail = (item) => {
+    setDetail(item);
+  };
 
   return (
     <div className=" sm:w-[80%] md:w-[95%] m-auto ">
