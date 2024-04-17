@@ -4,6 +4,8 @@ import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
 import { Link } from 'react-router-dom';
 
+
+
 export default function Carousel() {
   const slides = [
     {
@@ -61,7 +63,7 @@ export default function Carousel() {
   }, [currentIndex]);
 
   return (
-    <div className=" p-8  md:mt-12 sm:h-auto ">
+    <div className=" p-8  md:mt-14 sm:h-auto ">
       <div className=" max-w-[1400px] w-full md:w-[67vw] m-auto py-2 relative group">
        <div className='relative'>
        <img

@@ -9,19 +9,30 @@ import ShoppingCartModal from "../components/ShoppingCartModal.jsx";
 import styles from "../styles/Nav.module.css";
 import logo from "../images/haupt.png";
 
+import { Link } from "react-router-dom";
+import Store from "../store/Context";
+
+
+
+function Nav() {
+  const {cards } = Store();
+
+
 
 const categoryMappings = {
-  "dress": "/dresses",
-  "skirt": "/dresses",
-  "blouse": "/blouses",
-  "t-shirt": "/blouses",
+  "dresses": "/dresses",
+  "skirts": "/dresses",
+  "blouses": "/blouses",
+  "shirts": "/blouses",
+  "t-shirts": "/t-shirttops",
+  "tops": "/t-shirttops",
   "pants": "/pants",
   "jeans": "/pants",
   "shoes": "/shoes",
   "jacket": "/women's%20jackets",
 };
 
-function Nav() {
+
   const navigate = useNavigate();
   const [isActive, setIsActive] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
@@ -97,18 +108,13 @@ function Nav() {
             </Link>
           </li>
 
-
-          
-
-
-            {/* Modal Shopping Cart */}
-            <li className={styles.navLink} onClick={openModal}>
-
+         
+             {/* Modal Shopping Cart */}
+          <li className={styles.navLink} onClick={openModal}>
             <FontAwesomeIcon icon={faCartShopping} />
-            {cartItemCount > 0 && (
-              <div className="cart-item-count">{cartItemCount}</div>
-            )}
+            {cards.length > 0 ? cards.length : ""}
           </li>
+
         </div>
       </ul>
 

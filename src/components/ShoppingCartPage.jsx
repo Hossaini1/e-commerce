@@ -5,11 +5,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { FaCcVisa, FaCcMastercard, FaCcPaypal } from 'react-icons/fa';
 import { Link } from "react-router-dom";
+import Store from "../store/Context"
 
 
 
 
 const ShoppingCartPage = () => {
+ /* store */
+  const {cards ,setCards,dataCarousel} = Store();
+
+ 
   const [products, setProducts] = useState([
     { id: 1, name: "Product 1", price: 10, quantity: 1 },
     { id: 2, name: "Product 2", price: 15, quantity: 1 },
@@ -19,37 +24,33 @@ const ShoppingCartPage = () => {
 
   // Function to calculate the total price of all products
   const getTotalPrice = () => {
-    return products.reduce((total, product) => total + product.price * product.quantity, 0);
+    return cards.reduce((acc, curr) => acc + curr.price , 0);
   };
 
-  // Function to remove a product from the cart
-  const removeProduct = (id) => {
-    setProducts(products.filter((product) => product.id !== id));
-
+   // Function to remove a product from the cart
+   const removeItem = (gameId) => {
+    const updatedFavorites = cards.filter((item) => item.id !== gameId);
+    setCards(updatedFavorites);
   };
 
 
-  // Function to decrease quantity of a product
-  const decreaseQuantity = (id) => {
-    const updatedProducts = products.map((product) => {
-      if (product.id === id && product.quantity > 1) {
-        return { ...product, quantity: product.quantity - 1 };
+
+  function handleUpdateCartItemQuantity(gameId, amount) {
+
+    const updatedFavorites = cards.map((item) => {
+     
+      if (item.id === gameId) {
+        const selectedGame = dataCarousel.find((game) => game.id == gameId);
+      
+        const newQuantity = item.quantity + amount;
+        const newPrice = newQuantity * selectedGame.price;
+        return { ...item, quantity: newQuantity, price: newPrice };
       }
-      return product;
+      return item;
     });
-    setProducts(updatedProducts);
-  };
-
-  // Function to increase quantity of a product
-  const increaseQuantity = (id) => {
-    const updatedProducts = products.map((product) => {
-      if (product.id === id) {
-        return { ...product, quantity: product.quantity + 1 };
-      }
-      return product;
-    });
-    setProducts(updatedProducts);
-  };
+  setCards(updatedFavorites)
+  
+  }
 
 
     // Function to handle the payment process
@@ -57,6 +58,8 @@ const ShoppingCartPage = () => {
       // Redirect to the payment page or perform any payment-related actions
       console.log("Redirecting to the payment page...");
     };
+
+    console.log(cards)
 
 
 
@@ -67,30 +70,30 @@ const ShoppingCartPage = () => {
 
           {/* Displaying products */}
         <div>
-          {products.map((product) => (
+          {cards.map((product) => (
             <div key={product.id} className="flex items-center justify-between border-b border-tertiary py-4">
               <div className="flex items-center">
-                <img src={`images/${product.id}.jpg`} alt={product.name} className="w-14 h-20 object-cover mr-4" />
+                <img src={product.thumbnail} alt={product.title} className="w-14 h-20 object-cover mr-4" />
                 <div>
-                  <p className="font-bold">{product.name}</p>
+                  <p className="font-bold">{product.title}</p>
                   <p>{product.price}$</p>
                 </div>
               </div>
               <div className="flex items-center">
                 
                 <div className="flex items-center">
-                  <button onClick={() => decreaseQuantity(product.id)}
+                  <button onClick={() => handleUpdateCartItemQuantity(product.id, -1)}
                   className="bg-primary text-secendaryDark px-2  mr-4  border border-secondary">
                     -
                   </button>
                   <p>{product.quantity}</p>
-                  <button  onClick={() => increaseQuantity(product.id)}
+                  <button  onClick={() => handleUpdateCartItemQuantity(product.id, 1)}
                   className="bg-gray-200 text-secendaryDark  px-2  mr-3 ml-4 border border-secondary">
                     +
                   </button>
 
                   <button
-                  onClick={() => removeProduct(product.id)}
+                  onClick={() => removeItem(product.id)}
                   className="bg-gray-200 text-secondaryDark hover:bg-tertiary px-2 py-1 rounded-full ml-5"
                 >
                   <FontAwesomeIcon icon={faTrashAlt} />

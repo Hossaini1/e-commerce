@@ -18,16 +18,16 @@ import Footer from "./Footer";
 
 
 import DetailsPage from "../pages/DetailsPage";
-
-
 import PaymentPage from "./PaymentPage";
 import ShoppingCartPage from "./ShoppingCartPage";
-
-
+import ProductDetails from "../pages/ProductDetails";
 
 const Router = () => {
   return (
     <>
+
+     
+
 
 
     <Header />
@@ -46,6 +46,8 @@ const Router = () => {
       <Route path="/womensjacke" element={<WomensJacke />} />
 
       <Route path="/alllistitems" element={<AllListItems />} />
+       {/* Product details */}
+        <Route path="/product-details/:id" element={<ProductDetails />} />
 
       
         <Route path="/payment"element={<PaymentPage />} />
@@ -63,6 +65,7 @@ const Router = () => {
     <Footer />
   </>
 );
+
 
 
 
