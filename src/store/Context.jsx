@@ -132,7 +132,7 @@ export function ParentContext({ children }) {
     {
       product: "Blouse & Shirts",
       url: "https://wallpaperaccess.com/full/1272041.jpg",
-      category: "blousesshirts",
+      category: "blouseshirts",
     },
     {
       product: "Women Cloths",
@@ -147,7 +147,7 @@ export function ParentContext({ children }) {
     {
       product: "Mantel & Jacke",
       url: "https://images.pexels.com/photos/3775120/pexels-photo-3775120.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      category: "womensjackets",
+      category: "womensjacke",
     },
     {
       product: "Pants & Jeans",
