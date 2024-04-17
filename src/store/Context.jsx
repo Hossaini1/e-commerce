@@ -4,12 +4,38 @@ import axios from "axios";
 
 const Context = createContext();
 
-export function ParentContext({ children }) {
+
+  const [favorites, setFavorites] = useState([]);
+
+
   // UseNavigate für AllListItems Komponente
   const navigate = useNavigate();
   const handleClickToSeeMore = () => {
     navigate("/alllistitems");
   };
+
+  //favorite
+  const addToFavorites = (product) => {
+    setFavorites((prevFavorites) => {
+      if (!prevFavorites.some((fav) => fav.id === product.id)) {
+        return [...prevFavorites, product];
+      }
+      return prevFavorites;
+    });
+  };
+
+  const removeFromFavorites = (productId) => {
+    setFavorites((currentFavorites) => 
+      currentFavorites.filter((fav) => fav.id !== productId)
+    );
+  };
+ 
+  const isFavorite = (productId) => {
+  return favorites.some((product) => product.id === productId);
+    };
+
+  
+
   //object setting für slider
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -81,8 +107,14 @@ export function ParentContext({ children }) {
         handleClickToSeeMore,
         settings,
         dataCarousel,
-        detail,
-        setDetail,
+
+        favorites,
+        addToFavorites,
+        removeFromFavorites,
+        isFavorite
+        
+     
+
       }}
     >
       {children}
