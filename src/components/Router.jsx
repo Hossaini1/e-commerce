@@ -16,48 +16,42 @@ import WomensJacke from "../pages/WomensJacke";
 import Error from "../pages/Error";
 import Footer from "./Footer";
 import DetailsPage from "../pages/DetailsPage";
-
-
 import PaymentPage from "./PaymentPage";
 import ShoppingCartPage from "./ShoppingCartPage";
-
-
+import ProductDetails from "../pages/ProductDetails";
 
 const Router = () => {
   return (
     <>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/favorite" element={<Favorite />} />
+        <Route path="/cartshopping" element={<CartShopping />} />
+        <Route path="/blouseshirts" element={<BlousesShirts />} />
+        <Route path="/dressesskirts" element={<DressesSkirts />} />
+        <Route path="/maternityclothes" element={<MaternityClothes />} />
+        <Route path="/pantsjeans" element={<PantsJeans />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/shoes" element={<Shoes />} />
+        <Route path="/tshirtstops" element={<TshirtsTops />} />
+        <Route path="/womensjacke" element={<WomensJacke />} />
+        <Route path="/allLisItems" element={<AllListItems />} />
 
-    <Header />
-    <Routes>
-      <Route path="/" element={<Main />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/favorite" element={<Favorite />} />
-      <Route path="/cartshopping" element={<CartShopping />} />
-      <Route path="/blouseshirts" element={<BlousesShirts />} />
-      <Route path="/dressesskirts" element={<DressesSkirts />} />
-      <Route path="/maternityclothes" element={<MaternityClothes />} />
-      <Route path="/pantsjeans" element={<PantsJeans />} />
-      <Route path="/register" element={<Register />} />
-      <Route path="/shoes" element={<Shoes />} />
-      <Route path="/tshirtstops" element={<TshirtsTops />} />
-      <Route path="/womensjacke" element={<WomensJacke />} />
-      <Route path="/allLisItems" element={<AllListItems />} />
+        {/* Product details */}
+        <Route path="/product-details/:id" element={<ProductDetails />} />
 
-      {/* Details Route */}
-      <Route path="/dressesskirts/:id" element={<DetailsPage />} />
-      <Route path="/blouseshirts/:id" element={<DetailsPage />} />
+        {/* Details Route */}
+        <Route path="/dressesskirts/:id" element={<DetailsPage />} />
+        <Route path="/blouseshirts/:id" element={<DetailsPage />} />
 
-
-      {/* Error Page Route */}
-      <Route path="*" element={<Error />} />
-    </Routes>
-    <Footer />
-  </>
-);
-
-
-
-
+        {/* Error Page Route */}
+        <Route path="*" element={<Error />} />
+      </Routes>
+      <Footer />
+    </>
+  );
 };
 /* text  */
 export default Router;
