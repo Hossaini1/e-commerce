@@ -2,6 +2,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Store from "../store/Context";
+import { Link } from "react-router-dom";
 
 // const data = [
 //   {
@@ -32,7 +33,15 @@ import Store from "../store/Context";
 // ];
 
 const CarouselDunne = () => {
-  const { settings, handleClickToSeeMore,dataCarousel } = Store();
+
+  const { settings, handleClickToSeeMore, dataCarousel, setDetail, detail } =
+    Store();
+
+  const addDetail = (item) => {
+    setDetail(item);
+  };
+
+
   return (
     <div className=" sm:w-[80%] md:w-[95%] m-auto ">
       <div className="mt-30  text-center">
@@ -45,7 +54,9 @@ const CarouselDunne = () => {
         <Slider {...settings}>
           {dataCarousel.map((item, index) => (
             <div key={index} className="h-full w-full">
-              <div className=" flex justify-center items-center  rounded-md bg-primary h-48">
+
+<Link to={`/product-details/${item.id}`}>
+              <div className=" flex justify-center items-center rounded-md bg-primary h-48">
                 <div className="relative w-full h-full">
                 <img 
                 className="absolute inset-0 w-full h-full object-cover object-top rounded-t-md "
@@ -65,7 +76,16 @@ const CarouselDunne = () => {
                 >
                   Add to Cart
                 </button>
+                 <button
+                    className="bg-secondaryDark hover:bg-tertiary mb-3 text-primary font-bold py-2 px-4 rounded mt-2"
+                    onClick={() => addDetail(item)}
+                  >
+                    Detail
+                  </button>
               </div>
+</Link>
+              
+
             </div>
           ))}
         </Slider>
