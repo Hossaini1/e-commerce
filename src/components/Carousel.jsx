@@ -4,6 +4,8 @@ import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
 import { Link } from 'react-router-dom';
 
+
+
 export default function Carousel() {
   const slides = [
     {

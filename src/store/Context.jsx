@@ -6,6 +6,9 @@ import axios from "axios";
 const Context = createContext();
 
 export function ParentContext({ children }) {
+  const [cards,setCards] = useState([])
+
+
 
   // UseNavigate für AllListItems Komponente
   const navigate = useNavigate();
@@ -87,6 +90,8 @@ export function ParentContext({ children }) {
         handleClickToSeeMore,
         settings,
         dataCarousel,
+        cards,
+        setCards
         
      
       }}

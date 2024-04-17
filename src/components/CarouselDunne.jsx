@@ -2,6 +2,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Store from "../store/Context";
+
+
 // const data = [
 //   {
 //     img: "https://fastly.picsum.photos/id/7/4728/3168.jpg?hmac=c5B5tfYFM9blHHMhuu4UKmhnbZoJqrzNOP9xjkV4w3o",
@@ -29,11 +31,20 @@ import Store from "../store/Context";
 //     price: 12.25,
 //   },
 // ];
+
+
 const CarouselDunne = () => {
 
 
-  const { settings, handleClickToSeeMore,dataCarousel } = Store();
-  
+  const { settings, handleClickToSeeMore,dataCarousel, setCards,cards  } = Store();
+  const handleAddToCart =(item)=>{
+    const object = {...item, quantity: 1}
+
+    setCards([...cards,object])
+  }
+
+
+
 
   return (
     <div className=" sm:w-[80%] md:w-[95%] m-auto ">
@@ -60,7 +71,7 @@ const CarouselDunne = () => {
                 {/* Add to cart btn, and i deleted opacity from the card*/}
                 <button
                   className="bg-secondaryDark hover:bg-tertiary mb-3 text-primary font-bold py-2 px-4 rounded mt-2"
-                  onClick={() => handleAddToCart(item.name)}
+                  onClick={() => handleAddToCart(item)}
                 >
                   Add to Cart
                 </button>
