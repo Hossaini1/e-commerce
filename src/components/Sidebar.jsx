@@ -10,11 +10,11 @@ const Sidebar = () => {
   const pages = [
 
     { title: "Dresses & Skirts", path: "/dressesskirts" },
-    { title: "Blouses & Shirts", path: "/blousesshirts" },
-    { title: "T-shirts & Tops", path: "/t-shirttops" },
+    { title: "Blouses & Shirts", path: "/blouseshirts" },
+    { title: "T-shirts & Tops", path: "/tshirtstops" },
     { title: "Pants & Jeans", path: "/pantsjeans" },
     { title: "Maternity Clothes", path: "/maternityclothes" },
-    { title: "Women's jackets", path: "/womensjackets" },
+    { title: "Women's jackets", path: "/womensjacke" },
     { title: "Shoes", path: "/shoes" },
   ];
 
@@ -54,7 +54,7 @@ const Sidebar = () => {
       <h2
         onClick={toggleCategories}
         className="font-bold sm:flex sm:justify-center items-center rounded-b-3xl md:text-primary sm:mt-2 md:mt-0 sm:text-tertiary md:bg-tertiary md:animate-pulse md:text-2xl"
-        style={{ height: "10%", width: "100%" }}
+        style={{ height: "8%", width: "100%" }}
       >
         {h2Content}
       </h2>

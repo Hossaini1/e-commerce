@@ -2,16 +2,40 @@ import { createContext, useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-
 const Context = createContext();
 
-export function ParentContext({ children }) {
+
+  const [favorites, setFavorites] = useState([]);
+
 
   // UseNavigate für AllListItems Komponente
   const navigate = useNavigate();
   const handleClickToSeeMore = () => {
     navigate("/alllistitems");
   };
+
+  //favorite
+  const addToFavorites = (product) => {
+    setFavorites((prevFavorites) => {
+      if (!prevFavorites.some((fav) => fav.id === product.id)) {
+        return [...prevFavorites, product];
+      }
+      return prevFavorites;
+    });
+  };
+
+  const removeFromFavorites = (productId) => {
+    setFavorites((currentFavorites) => 
+      currentFavorites.filter((fav) => fav.id !== productId)
+    );
+  };
+ 
+  const isFavorite = (productId) => {
+  return favorites.some((product) => product.id === productId);
+    };
+
+  
+
   //object setting für slider
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -23,38 +47,67 @@ export function ParentContext({ children }) {
       />
     );
   }
-  function SamplePrevArrow(props){
+  function SamplePrevArrow(props) {
     const { className, style, onClick } = props;
     return (
-          <div
-            className={className}
-            style={{ ...style, display: "block", background: "rgb(84,84,84)" }}
-            onClick={onClick}
-          />
-        );
-    }
+      <div
+        className={className}
+        style={{ ...style, display: "block", background: "rgb(84,84,84)" }}
+        onClick={onClick}
+      />
+    );
+  }
   const settings = {
     dots: false,
     infinite: true,
-    speed: 800,
+    speed: 1000,
     slidesToShow: 5,
     slidesToScroll: 5,
     responsive: [
       {
-        breakpoint: 960,
+        breakpoint: 2048,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 5,
+          slidesToScroll: 5,
           infinite: true,
           dots: false
         }
       },
       {
-        breakpoint: 360,
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+          infinite: true,
+          dots: false
+        }
+      },
+      {
+        breakpoint: 860,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3
+          slidesToScroll: 3,
+          infinite: true,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 560,
+        settings: {
+
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: false
         }
+      },
+      {
+        breakpoint: 370,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+
       },
     ],
     nextArrow: <SampleNextArrow />,
@@ -62,6 +115,7 @@ export function ParentContext({ children }) {
   };
   //  Api Abruf für dunne carousel
   const [dataCarousel, setDataCarousel] = useState([]);
+  const [detail, setDetail] = useState([]);
   const url = "https://dummyjson.com/products/category/womens-dresses";
 
   const fetchData = async () => {
@@ -76,19 +130,20 @@ export function ParentContext({ children }) {
     fetchData();
   }, []);
 
-  
- 
-
-  
-
   return (
     <Context.Provider
       value={{
         handleClickToSeeMore,
         settings,
         dataCarousel,
+
+        favorites,
+        addToFavorites,
+        removeFromFavorites,
+        isFavorite
         
      
+
       }}
     >
       {children}

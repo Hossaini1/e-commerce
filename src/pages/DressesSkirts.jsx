@@ -1,11 +1,12 @@
 
 import { useState } from 'react';
-import { FaHeart } from 'react-icons/fa';
+import { FaHeart,FaRegHeart } from 'react-icons/fa';
 import DressContextApi from '../store/DressesContext';
-
+import Store from '../store/Context';
 
 const DressesSkirts = () => {
  const { data } = DressContextApi();
+ const { addToFavorites,isFavorite } = Store();
 
  console.log(data);
 
@@ -23,8 +24,9 @@ const DressesSkirts = () => {
             <img src={item.thumbnail} alt={item.title} className="h-52 w-full object-cover object-top mb-4" />
             <div className="flex justify-between items-center mb-2">
               <h2 className="text-lg font-semibold text-primary">{item.title}</h2>
-              <button onClick={() => addToCart(item)} className="text-primary hover:text-tertiary">
-                <FaHeart className="h-6 w-6" />
+              <button onClick={() => addToFavorites(item)} className="text-primary hover:text-tertiary">
+              {isFavorite(item.id) ? <FaHeart className="h-6 w-6 text-tertiary  " /> : <FaRegHeart className="h-6 w-6 " />}
+               
               </button>
             </div>
             <p className="text-gray-700 text-primary">{item.price} $</p>

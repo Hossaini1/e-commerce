@@ -12,7 +12,7 @@ const Footer = () => {
     <footer>
         < hr/>
         <div>
-            <div className=" text-secondaryDark text-center pt-20 p-2  sm:text-sm  md:text-xl" >
+            <div className=" text-secondaryDark text-center font-bold pt-20 p-2  sm:text-sm  md:text-xl" >
                 <span>Get exclusive promotions, private sales and new products</span>
                 
             </div>
@@ -41,12 +41,12 @@ const Footer = () => {
                 
             </div>
                 <div className="flex justify-center items-center space-x-6 cursor-pointer text-secondaryDark  p-4 sm:text-xs  md:text-xl">
-                    <CiFacebook className="icon" />
-                    <FaTwitter className="icon" />
-                    <IoLogoInstagram className="icon" />
-                    <FaPinterestP className="icon" />
-                    <SiSpotify className="icon" />
-                    <IoLogoYoutube className="icon" />
+                    <CiFacebook className="icon" size={20}/>
+                    <FaTwitter className="icon" size={20}/>
+                    <IoLogoInstagram className="icon" size={20}/>
+                    <FaPinterestP className="icon" size={20}/>
+                    <SiSpotify className="icon" size={20}/>
+                    <IoLogoYoutube className="icon" size={20}/>
             </div>
 
             <div className="flex  justify-center items-center space-x-1 p-2 ">

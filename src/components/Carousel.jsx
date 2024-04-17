@@ -61,7 +61,7 @@ export default function Carousel() {
   }, [currentIndex]);
 
   return (
-    <div className=" p-8  md:mt-12 sm:h-auto ">
+    <div className=" p-8  md:mt-14 sm:h-auto ">
       <div className=" max-w-[1400px] w-full md:w-[67vw] m-auto py-2 relative group">
        <div className='relative'>
        <img
