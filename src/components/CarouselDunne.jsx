@@ -2,6 +2,17 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Store from "../store/Context";
+import { Link } from "react-router-dom";
+
+const CarouselDunne = () => {
+  const { settings, handleClickToSeeMore, dataCarousel, setDetail, detail } =
+    Store();
+
+  const addDetail = (item) => {
+    setDetail(item);
+  };
+
+
 
 const data = [
   {
@@ -33,6 +44,7 @@ const data = [
 
 const CarouselDunne = () => {
   const { settings, handleClickToSeeMore } = Store();
+
   return (
     <div className=" sm:w-[80%] md:w-[95%] m-auto ">
       <div className="mt-30  text-center">
@@ -45,6 +57,33 @@ const CarouselDunne = () => {
         <Slider {...settings}>
           {data.map((item, index) => (
             <div key={index} className="h-full w-full">
+              <Link to={`/product-details/${item.id}`}>
+                <div className=" flex justify-center items-center  rounded-md bg-primary  ">
+                  <img
+                    src={item.thumbnail}
+                    alt={item.title}
+                    className=" sm:w-[100%]  sm:rounded-sm md:rounded-md bg-contain "
+                  />
+                </div>
+
+                <div className="flex flex-col justify-center items-center  bg-secondary text-primary   sm:text-[11px] sm:gap-0 sm:mb-2 sm:rounded-sm md:text-sm  md:gap-2   md:rounded-md">
+                  <p className="font-bold">{item.title}</p>
+                  <p className="font-bold">{item.price}</p>
+                  {/* Add to cart btn, and i deleted opacity from the card*/}
+                  <button
+                    className="bg-secondaryDark hover:bg-tertiary mb-3 text-primary font-bold py-2 px-4 rounded mt-2"
+                    onClick={() => handleAddToCart(item.name)}
+                  >
+                    Add to Cart
+                  </button>
+                  <button
+                    className="bg-secondaryDark hover:bg-tertiary mb-3 text-primary font-bold py-2 px-4 rounded mt-2"
+                    onClick={() => addDetail(item)}
+                  >
+                    Detail
+                  </button>
+                </div>
+              </Link>
               <div className=" flex justify-center items-center  rounded-md bg-primary  ">
                 <img
                   src={item.img}
