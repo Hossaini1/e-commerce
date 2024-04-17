@@ -8,12 +8,10 @@ import { Link } from "react-router-dom";
 
 const CarouselDunne = () => {
 
-  const { settings, handleClickToSeeMore, dataCarousel, setDetail, detail ,setCards,cards} =
+  const { settings, handleClickToSeeMore, dataCarousel ,setCards,cards} =
     Store();
 
-  const addDetail = (item) => {
-    setDetail(item);
-  };
+ 
 
 
   const handleAddToCart =(item)=>{
@@ -40,7 +38,7 @@ const CarouselDunne = () => {
           {dataCarousel.map((item, index) => (
             <div key={index} className="h-full w-full">
 
-<Link to={`/product-details/${item.id}`}>
+
               <div className=" flex justify-center items-center rounded-md bg-primary h-48">
                 <div className="relative w-full h-full">
                 <img 
@@ -63,14 +61,9 @@ const CarouselDunne = () => {
                 >
                   Add to Cart
                 </button>
-                 <button
-                    className="bg-secondaryDark hover:bg-tertiary mb-3 text-primary font-bold py-2 px-4 rounded mt-2"
-                    onClick={() => addDetail(item)}
-                  >
-                    Detail
-                  </button>
+           
               </div>
-</Link>
+
               
 
             </div>

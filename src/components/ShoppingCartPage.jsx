@@ -109,7 +109,7 @@ const ShoppingCartPage = () => {
           ))}
         </div>
         <div>
-          <div className="border border-tertiary bg-primaryDark rounded-md p-10 mt-10">
+          <div className="shadow-[0_0_10px]  bg-primaryDark rounded-xl p-16">
             <div className="flex justify-between mb-4">
               <p className="text-lg font-bold">Total</p>
               <p className="text-lg font-bold">{getTotalPrice()} $</p>
@@ -133,16 +133,19 @@ const ShoppingCartPage = () => {
                 className="border border-gray-300 rounded-md p-2 w-full"
                 placeholder="Enter Your Voucher Code"
               />
-            </div>
-            <button className="bg-secondary text-primary py-2 px-6 border-tertiary rounded-md hover:bg-tertiary">
+            </div >
+            <div className="flex md:justify-between sm:flex-col sm:gap-2 ">
+            <button className="bg-secondary text-primary py-2 px-10 border-tertiary rounded-md hover:bg-tertiary">
               Apply
             </button>
 
 
               {/* Payment button */}
-              <Link to="/payment" className="bg-tertiary text-primary py-2 px-6 ml-[30rem]  rounded-md  hover:bg-secondaryDark ">
+             
+             <Link to="/payment" className="bg-tertiary text-primary py-3 px-6 sm:text-center  rounded-md  hover:bg-secondaryDark ">
               Go To Pay
               </Link>
+             </div>
            
           </div>
 
