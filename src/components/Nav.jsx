@@ -11,10 +11,12 @@ import logo from "../images/haupt.png";
 
 
 const categoryMappings = {
-  "dress": "/dresses",
-  "skirt": "/dresses",
-  "blouse": "/blouses",
-  "t-shirt": "/blouses",
+  "dresses": "/dresses",
+  "skirts": "/dresses",
+  "blouses": "/blouses",
+  "shirts": "/blouses",
+  "t-shirts": "/t-shirttops",
+  "tops": "/t-shirttops",
   "pants": "/pants",
   "jeans": "/pants",
   "shoes": "/shoes",
