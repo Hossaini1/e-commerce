@@ -1,7 +1,3 @@
-
-
-
-
 import { useState } from "react";
 import CarouselDunne from "../components/CarouselDunne";
 
@@ -24,4 +20,5 @@ const CartShopping = ({ cartItems }) => {
 
 
 export default CartShopping;
+
 

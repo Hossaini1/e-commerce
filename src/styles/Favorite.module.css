@@ -39,6 +39,7 @@
   }
   
   .wishlistItems {
+
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
@@ -48,12 +49,13 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     overflow: hidden;
+    
   }
   
   .itemImage {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: 350px;
+   
   }
   
   .itemDetails {
