@@ -31,15 +31,11 @@ const Main = () => {
         </div>
       </div>
 
-
       <div>
         {/* added CartShopping and addToCart, cartItems */}
         <CarouselDunne addToCart={addToCart} />
         <CartShopping cartItems={cartItems} />
       </div>
-
-
-
     </main>
   );
 };

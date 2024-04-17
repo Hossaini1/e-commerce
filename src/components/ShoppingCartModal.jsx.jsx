@@ -128,13 +128,13 @@ const ShoppingCartModal = ({
 
                     {/* Plus & minus buttons */}
                     <div className="flex items-center  text-secondaryDark ">
-                      <button 
+                      <button
                         onClick={() =>
                           handleUpdateCartItemQuantity(product.id, -1)
                         }
-                        className="bg-secondaryDark text-primary text-1xl py-1 rounded-full mr-2 hover:bg-gray-200 sm:w "
+                        className="bg-secondaryDark text-primary text-1xl p-2 rounded-full mr-2 hover:bg-gray-200  "
                       >
-                         {" "}
+                        {" "}
                         -{" "}
                       </button>
 
@@ -144,7 +144,7 @@ const ShoppingCartModal = ({
                         onClick={() =>
                           handleUpdateCartItemQuantity(product.id, 1)
                         }
-                        className="bg-secondaryDark text-primary  py-1 rounded-full ml-2 hover:bg-gray-200 "
+                        className="bg-secondaryDark text-primary  p-2 rounded-full ml-2 hover:bg-gray-200 "
                       >
                         {" "}
                         +{" "}
@@ -154,7 +154,7 @@ const ShoppingCartModal = ({
                       <FontAwesomeIcon
                         icon={faTrashAlt}
                         onClick={() => removeItem(product.id)}
-                        className="ml-4 cursor-pointer  hover:text-primary transition-colors duration-300"
+                        className="ml-4 cursor-pointer hover:text-primary transition-colors duration-300"
                       />
                     </div>
                   </div>

@@ -8,7 +8,6 @@ const Sidebar = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const pages = [
-
     { title: "Dresses & Skirts", path: "/dressesskirts" },
     { title: "Blouses & Shirts", path: "/blouseshirts" },
     { title: "T-shirts & Tops", path: "/tshirtstops" },
@@ -17,8 +16,6 @@ const Sidebar = () => {
     { title: "Women's jackets", path: "/womensjacke" },
     { title: "Shoes", path: "/shoes" },
   ];
-
-
 
   useEffect(() => {
     const handleResize = () => {

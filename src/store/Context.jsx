@@ -4,15 +4,10 @@ import axios from "axios";
 
 const Context = createContext();
 
-
 export function ParentContext({ children }) {
-  const [cards,setCards] = useState([])
-
-
+  const [cards, setCards] = useState([]);
 
   const [favorites, setFavorites] = useState([]);
-
-
 
   // UseNavigate für AllListItems Komponente
   const navigate = useNavigate();
@@ -31,16 +26,14 @@ export function ParentContext({ children }) {
   };
 
   const removeFromFavorites = (productId) => {
-    setFavorites((currentFavorites) => 
+    setFavorites((currentFavorites) =>
       currentFavorites.filter((fav) => fav.id !== productId)
     );
   };
- 
-  const isFavorite = (productId) => {
-  return favorites.some((product) => product.id === productId);
-    };
 
-  
+  const isFavorite = (productId) => {
+    return favorites.some((product) => product.id === productId);
+  };
 
   //object setting für slider
   function SampleNextArrow(props) {
@@ -76,8 +69,8 @@ export function ParentContext({ children }) {
           slidesToShow: 5,
           slidesToScroll: 5,
           infinite: true,
-          dots: false
-        }
+          dots: false,
+        },
       },
       {
         breakpoint: 1024,
@@ -85,8 +78,8 @@ export function ParentContext({ children }) {
           slidesToShow: 4,
           slidesToScroll: 4,
           infinite: true,
-          dots: false
-        }
+          dots: false,
+        },
       },
       {
         breakpoint: 860,
@@ -100,20 +93,18 @@ export function ParentContext({ children }) {
       {
         breakpoint: 560,
         settings: {
-
           slidesToShow: 2,
           slidesToScroll: 2,
           infinite: true,
-          dots: false
-        }
+          dots: false,
+        },
       },
       {
         breakpoint: 370,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
-        }
-
+          slidesToScroll: 1,
+        },
       },
     ],
     nextArrow: <SampleNextArrow />,
@@ -136,6 +127,35 @@ export function ParentContext({ children }) {
     fetchData();
   }, []);
 
+  // Slides Grosse Carousel Data
+  const slides = [
+    {
+      product: "Blouse & Shirts",
+      url: "https://wallpaperaccess.com/full/1272041.jpg",
+      category: "blousesshirts",
+    },
+    {
+      product: "Women Cloths",
+      url: "https://c4.wallpaperflare.com/wallpaper/174/310/462/model-poses-wedding-wallpaper-preview.jpg",
+      category: "maternityclothes",
+    },
+    {
+      product: "Shoes",
+      url: "https://images.pexels.com/photos/6567744/pexels-photo-6567744.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      category: "shoes",
+    },
+    {
+      product: "Mantel & Jacke",
+      url: "https://images.pexels.com/photos/3775120/pexels-photo-3775120.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      category: "womensjackets",
+    },
+    {
+      product: "Pants & Jeans",
+      url: "https://images.pexels.com/photos/932403/pexels-photo-932403.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      category: "pantsjeans",
+    },
+  ];
+
   return (
     <Context.Provider
       value={{
@@ -146,15 +166,11 @@ export function ParentContext({ children }) {
         cards,
         setCards,
 
-
         favorites,
         addToFavorites,
         removeFromFavorites,
-        isFavorite
-
-        
-     
-
+        isFavorite,
+        slides,
       }}
     >
       {children}

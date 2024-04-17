@@ -7,24 +7,18 @@
   video {
     height: initial;
     background-color: #d0134563;
-   
-   
   }
 }
 
 .slick-slide > div {
-
   margin: 0 10px;
-
- 
 }
 .icon {
-  transition: transform 0.2s ease-in-out; 
+  transition: transform 0.2s ease-in-out;
 }
 
 .icon:hover {
-  transform: scale(1.5); 
-
+  transform: scale(1.5);
 }
 
 .bold-icon {
@@ -32,4 +26,3 @@
   width: 6;
   height: 6;
 }
-

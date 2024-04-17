@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart, faCartShopping, faHome } from "@fortawesome/free-solid-svg-icons";
+import {
+  faHeart,
+  faCartShopping,
+  faHome,
+} from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
-
 
 import ShoppingCartModal from "../components/ShoppingCartModal.jsx";
 import styles from "../styles/Nav.module.css";
@@ -12,26 +15,21 @@ import logo from "../images/haupt.png";
 
 import Store from "../store/Context";
 
-
-
 function Nav() {
-  const {cards } = Store();
+  const { cards } = Store();
 
-
-
-const categoryMappings = {
-  "dresses": "/dresses",
-  "skirts": "/dresses",
-  "blouses": "/blouses",
-  "shirts": "/blouses",
-  "t-shirts": "/t-shirttops",
-  "tops": "/t-shirttops",
-  "pants": "/pants",
-  "jeans": "/pants",
-  "shoes": "/shoes",
-  "jacket": "/women's%20jackets",
-};
-
+  const categoryMappings = {
+    dresses: "/dresses",
+    skirts: "/dresses",
+    blouses: "/blouses",
+    shirts: "/blouses",
+    "t-shirts": "/t-shirttops",
+    tops: "/t-shirttops",
+    pants: "/pants",
+    jeans: "/pants",
+    shoes: "/shoes",
+    jacket: "/women's%20jackets",
+  };
 
   const navigate = useNavigate();
   const [isActive, setIsActive] = useState(false);
@@ -45,7 +43,7 @@ const categoryMappings = {
   };
 
   const handleSearchChange = (e) => {
-    setSearchQuery(e.target.value.toLowerCase()); 
+    setSearchQuery(e.target.value.toLowerCase());
 
     const searchCategory = categoryMappings[e.target.value.toLowerCase()];
     setSearchCategory(searchCategory);
@@ -55,7 +53,7 @@ const categoryMappings = {
     e.preventDefault();
 
     if (searchCategory) {
-      navigate(searchCategory); 
+      navigate(searchCategory);
     } else {
       console.log("Search all categories:", searchQuery);
     }
@@ -63,7 +61,7 @@ const categoryMappings = {
 
   const openModal = () => {
     setIsModalOpen(true);
-    setIsActive(false); 
+    setIsActive(false);
   };
 
   const closeModal = () => {
@@ -108,13 +106,11 @@ const categoryMappings = {
             </Link>
           </li>
 
-         
-             {/* Modal Shopping Cart */}
+          {/* Modal Shopping Cart */}
           <li className={styles.navLink} onClick={openModal}>
             <FontAwesomeIcon icon={faCartShopping} />
             {cards.length > 0 ? cards.length : ""}
           </li>
-
         </div>
       </ul>
 

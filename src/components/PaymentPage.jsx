@@ -1,7 +1,4 @@
-import  { useState } from "react";
-
-
-
+import { useState } from "react";
 
 const PaymentPage = () => {
   // State for user data
@@ -42,7 +39,7 @@ const PaymentPage = () => {
   return (
     <div className="container mx-auto py-5">
       <h1 className="text-2xl text-center font-bold mb-10">Payment</h1>
-      <form onSubmit={handleSubmit}className="flex flex-col items-center" >
+      <form onSubmit={handleSubmit} className="flex flex-col items-center">
         {/* User data fields */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 ">
           <input
@@ -104,7 +101,11 @@ const PaymentPage = () => {
         {/* Payment method selection */}
         <div className="mt-8 ">
           <p className="mb-3 ml-4 ">Payment Method:</p>
-          <select value={paymentMethod} onChange={handlePaymentMethodChange} className="border border-secondaryDark  rounded-md p-3 px-5">
+          <select
+            value={paymentMethod}
+            onChange={handlePaymentMethodChange}
+            className="border border-secondaryDark  rounded-md p-3 px-5"
+          >
             <option value="creditCard">Credit Card</option>
             <option value="paypal">PayPal</option>
             <option value="bankTransfer">Bank Transfer</option>
@@ -112,7 +113,10 @@ const PaymentPage = () => {
         </div>
 
         {/* Submit button */}
-        <button type="submit" className="bg-tertiary text-primary py-3 px-10 rounded-md mt-6 hover:bg-secondary">
+        <button
+          type="submit"
+          className="bg-tertiary text-primary py-3 px-10 rounded-md mt-6 hover:bg-secondary"
+        >
           Pay Now
         </button>
       </form>
