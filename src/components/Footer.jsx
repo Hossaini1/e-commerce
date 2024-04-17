@@ -18,13 +18,13 @@ const Footer = () => {
         <div className=" text-primary flex justify-center items-center p-5">
           <input
             type="text"
-            className="outline-none border-b-2 border-line border-secondaryDark bg-primary text-secondaryDark sm:text-xs md:text-xl text-center"
+            className="outline-none border-b-2  border-line w-60 border-secondaryDark bg-primary text-secondaryDark sm:text-xs md:text-xl text-center"
             placeholder="Enter email"
             required
           ></input>
         </div>
         <div className=" text-primary flex justify-center items-center ">
-          <button type="submit" className=" sm:w-20 sm:text-xs md:text-xl md:w-60 md:p-2 sm:p-1 bg-secondary rounded-full  mb-5 hover:bg-tertiary transition duration-1000 ease-out  ">
+          <button type="submit" className=" sm:w-20 sm:text-xs md:text-xl md:w-60 md:p-2 sm:p-1 bg-secondary rounded-full  mb-5 hover:bg-tertiary transition duration-1000 ease-out">
             {" "}
             Subscribe to{" "}
           </button>
