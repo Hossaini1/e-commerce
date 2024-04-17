@@ -10,11 +10,11 @@ const Sidebar = () => {
   const pages = [
 
     { title: "Dresses & Skirts", path: "/dressesskirts" },
-    { title: "Blouses & Shirts", path: "/blousesshirts" },
-    { title: "T-shirts & Tops", path: "/t-shirttops" },
+    { title: "Blouses & Shirts", path: "/blouseshirts" },
+    { title: "T-shirts & Tops", path: "/tshirtstops" },
     { title: "Pants & Jeans", path: "/pantsjeans" },
     { title: "Maternity Clothes", path: "/maternityclothes" },
-    { title: "Women's jackets", path: "/womensjackets" },
+    { title: "Women's jackets", path: "/womensjacke" },
     { title: "Shoes", path: "/shoes" },
   ];
 
