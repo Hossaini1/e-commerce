@@ -127,7 +127,7 @@ export function ParentContext({ children }) {
     fetchData();
   }, []);
 
-  // Grosse Carousel Data
+  // Slides Grosse Carousel Data
   const slides = [
     {
       product: "Blouse & Shirts",
