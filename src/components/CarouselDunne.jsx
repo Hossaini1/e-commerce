@@ -3,33 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Store from "../store/Context";
 import { Link } from "react-router-dom";
-// const data = [
-//   {
-//     img: "https://fastly.picsum.photos/id/7/4728/3168.jpg?hmac=c5B5tfYFM9blHHMhuu4UKmhnbZoJqrzNOP9xjkV4w3o",
-//     name: "Produkt 1",
-//     price: 10.99,
-//   },
-//   {
-//     img: "https://fastly.picsum.photos/id/2/5000/3333.jpg?hmac=_KDkqQVttXw_nM-RyJfLImIbafFrqLsuGO5YuHqD-qQ",
-//     name: "Produkt 2",
-//     price: 20.49,
-//   },
-//   {
-//     img: "https://fastly.picsum.photos/id/10/2500/1667.jpg?hmac=J04WWC_ebchx3WwzbM-Z4_KC_LeLBWr5LZMaAkWkF68",
-//     name: "Produkt 3",
-//     price: 15.75,
-//   },
-//   {
-//     img: "https://fastly.picsum.photos/id/11/2500/1667.jpg?hmac=xxjFJtAPgshYkysU_aqx2sZir-kIOjNR9vx0te7GycQ",
-//     name: "Produkt 4",
-//     price: 8.99,
-//   },
-//   {
-//     img: "https://fastly.picsum.photos/id/13/2500/1667.jpg?hmac=SoX9UoHhN8HyklRA4A3vcCWJMVtiBXUg0W4ljWTor7s",
-//     name: "Produkt 5",
-//     price: 12.25,
-//   },
-// ];
+
 const CarouselDunne = () => {
   const { settings, handleClickToSeeMore, dataCarousel, setDetail, detail } =
     Store();
@@ -37,6 +11,39 @@ const CarouselDunne = () => {
   const addDetail = (item) => {
     setDetail(item);
   };
+
+
+
+const data = [
+  {
+    img: "https://fastly.picsum.photos/id/7/4728/3168.jpg?hmac=c5B5tfYFM9blHHMhuu4UKmhnbZoJqrzNOP9xjkV4w3o",
+    name: "Produkt 1",
+    price: 10.99,
+  },
+  {
+    img: "https://fastly.picsum.photos/id/2/5000/3333.jpg?hmac=_KDkqQVttXw_nM-RyJfLImIbafFrqLsuGO5YuHqD-qQ",
+    name: "Produkt 2",
+    price: 20.49,
+  },
+  {
+    img: "https://fastly.picsum.photos/id/10/2500/1667.jpg?hmac=J04WWC_ebchx3WwzbM-Z4_KC_LeLBWr5LZMaAkWkF68",
+    name: "Produkt 3",
+    price: 15.75,
+  },
+  {
+    img: "https://fastly.picsum.photos/id/11/2500/1667.jpg?hmac=xxjFJtAPgshYkysU_aqx2sZir-kIOjNR9vx0te7GycQ",
+    name: "Produkt 4",
+    price: 8.99,
+  },
+  {
+    img: "https://fastly.picsum.photos/id/13/2500/1667.jpg?hmac=SoX9UoHhN8HyklRA4A3vcCWJMVtiBXUg0W4ljWTor7s",
+    name: "Produkt 5",
+    price: 12.25,
+  },
+];
+
+const CarouselDunne = () => {
+  const { settings, handleClickToSeeMore } = Store();
 
   return (
     <div className=" sm:w-[80%] md:w-[95%] m-auto ">
@@ -48,7 +55,7 @@ const CarouselDunne = () => {
           Trending
         </p>
         <Slider {...settings}>
-          {dataCarousel.map((item, index) => (
+          {data.map((item, index) => (
             <div key={index} className="h-full w-full">
               <Link to={`/product-details/${item.id}`}>
                 <div className=" flex justify-center items-center  rounded-md bg-primary  ">
@@ -77,6 +84,24 @@ const CarouselDunne = () => {
                   </button>
                 </div>
               </Link>
+              <div className=" flex justify-center items-center  rounded-md bg-primary  ">
+                <img
+                  src={item.img}
+                  alt={item.name}
+                  className=" sm:w-[100%]  sm:rounded-sm md:rounded-md bg-contain "
+                />
+              </div>
+              <div className="flex flex-col justify-center items-center  bg-secondary text-primary   sm:text-[11px] sm:gap-0 sm:mb-2 sm:rounded-sm md:text-sm  md:gap-2   md:rounded-md">
+                <p className="font-bold mt-2">{item.name}</p>
+                <p className="font-bold mt-2">{item.price}$</p>
+                {/* Add to cart btn, and i deleted opacity from the card*/}
+                <button
+                  className="bg-secondaryDark hover:bg-tertiary  mb-3 text-primary font-bold py-2 px-4 rounded mt-2"
+                  onClick={() => handleAddToCart(item.name)}
+                >
+                  Add to Cart
+                </button>
+              </div>
             </div>
           ))}
         </Slider>

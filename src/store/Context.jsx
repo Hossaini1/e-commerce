@@ -8,7 +8,7 @@ export function ParentContext({ children }) {
   // UseNavigate für AllListItems Komponente
   const navigate = useNavigate();
   const handleClickToSeeMore = () => {
-    navigate("/listitems");
+    navigate("/alllistitems");
   };
   //object setting für slider
   function SampleNextArrow(props) {
