@@ -1,6 +1,6 @@
 # PAVAWS E-Commerce Project
 
-[Visit my website]([https://hossaini1.github.io/portfolio/](https://e-commerce-5oox3i43p-alis-projects-b528478b.vercel.app/))
+[Visit the website]([https://hossaini1.github.io/portfolio/](https://e-commerce-5oox3i43p-alis-projects-b528478b.vercel.app/))
 
 The 'PAVAWS' E-Commerce Project  is a project by DCI students :computer:, namely: 
 - Ali Hossaini [Link](https://github.com/Hossaini1)
