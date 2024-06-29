@@ -4,15 +4,13 @@
 
 # PAVAWS E-Commerce Project
 
-![PAVAWS Logo](path/to/logo.png)
-
 ## Projektbeschreibung
 
 Das 'PAVAWS' E-Commerce Projekt ist eine umfassende Online-Shopping-Plattform, entwickelt von den talentierten Studierenden der DCI 💻. Dieses Projekt zielt darauf ab, eine benutzerfreundliche und effiziente E-Commerce-Lösung zu bieten, die verschiedene Funktionen für eine nahtlose Einkaufserfahrung integriert.
 
 ## Entwicklerteam
 
-- [Ali Hossaini](link)
+- [Ali Hossaini](https://github.com/Hossaini1)
 - [Anastasios Aintinidis](link)
 - [Viktoriia Kaliberda](link)
 - [Samira Hosseini](link)
