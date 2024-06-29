@@ -2,8 +2,6 @@
 
 [Visit the website](https://e-commerce-5oox3i43p-alis-projects-b528478b.vercel.app/)
 
-# PAVAWS E-Commerce Project
-
 ## Projektbeschreibung
 
 Das 'PAVAWS' E-Commerce Projekt ist eine umfassende Online-Shopping-Plattform, entwickelt von den talentierten Studierenden der DCI 💻. Dieses Projekt zielt darauf ab, eine benutzerfreundliche und effiziente E-Commerce-Lösung zu bieten, die verschiedene Funktionen für eine nahtlose Einkaufserfahrung integriert.
@@ -11,11 +9,11 @@ Das 'PAVAWS' E-Commerce Projekt ist eine umfassende Online-Shopping-Plattform, e
 ## Entwicklerteam
 
 - [Ali Hossaini](https://github.com/Hossaini1)
-- [Anastasios Aintinidis](link)
-- [Viktoriia Kaliberda](link)
-- [Samira Hosseini](link)
-- [Patrycja Wozniewicz](link)
-- [Andreas Stroianetki](link)
+- [Anastasios Aintinidis](https://github.com/Taseos)
+- [Viktoriia Kaliberda]([link](https://github.com/kaliberda97))
+- [Samira Hosseini]([link](https://github.com/samiraHs))
+- [Patrycja Wozniewicz](https://github.com/Patison82)
+- [Andreas Stroianetki]([link](https://github.com/Sandreass))
 
 ## Projektfunktionen
 
