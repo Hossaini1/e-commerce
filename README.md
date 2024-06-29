@@ -11,10 +11,10 @@ Das 'PAVAWS' E-Commerce Projekt ist eine umfassende Online-Shopping-Plattform, e
 
 - [Ali Hossaini](https://github.com/Hossaini1)
 - [Anastasios Aintinidis](https://github.com/Taseos)
-- [Viktoriia Kaliberda]([link](https://github.com/kaliberda97))
-- [Samira Hosseini]([link](https://github.com/samiraHs))
+- [Viktoriia Kaliberda](https://github.com/kaliberda97)
+- [Samira Hosseini](https://github.com/samiraHs)
 - [Patrycja Wozniewicz](https://github.com/Patison82)
-- [Andreas Stroianetki]([link](https://github.com/Sandreass))
+- [Andreas Stroianetki]((https://github.com/Sandreass)
 
 ## Projektfunktionen
 
