@@ -1,6 +1,7 @@
 # PAVAWS E-Commerce Project
 
 [Visit the website](https://e-commerce-5oox3i43p-alis-projects-b528478b.vercel.app/)
+![start page ](./src/images/readme.png)
 
 ## Projektbeschreibung
 
@@ -72,5 +73,3 @@ PAVAWS/
 ├── README.md
 └── ...
 
-
-![start page ](./src/images/readme.png)
