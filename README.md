@@ -53,6 +53,7 @@ Das 'PAVAWS' E-Commerce Projekt ist eine umfassende Online-Shopping-Plattform, e
 
 - **Frontend:** [React.js](https://reactjs.org/)
   - **Buildtools:** [Vite](https://vitejs.dev/)
+- **OMDb API:** Eine API zum Abrufen von Filminformationen, die für die Suche nach Filmtiteln verwendet wird.
 - **Styling:** CSS, [Tailwind CSS](https://tailwindcss.com/)
 - **Deployment:** [Vercel](https://vercel.com/)
 
