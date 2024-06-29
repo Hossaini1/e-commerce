@@ -37,7 +37,7 @@ Das 'PAVAWS' E-Commerce Projekt ist eine umfassende Online-Shopping-Plattform, e
 
 1. Repository klonen:
     ```sh
-    git clone https://github.com/DeinGitHubBenutzername/PAVAWS.git
+    git clone git@github.com:Hossaini1/e-commerce.git
     ```
 2. In das Projektverzeichnis wechseln:
     ```sh
@@ -49,16 +49,14 @@ Das 'PAVAWS' E-Commerce Projekt ist eine umfassende Online-Shopping-Plattform, e
     ```
 4. Entwicklungsserver starten:
     ```sh
-    npm start
+    npm run dev
     ```
 
 ## Technologie-Stack
 
 - **Frontend:** React.js
-- **Backend:** Node.js, Express.js
-- **Datenbank:** MongoDB
-- **Styling:** CSS, SASS
-- **Deployment:** Docker, Heroku
+- **Styling:** CSS, Tailwindcss
+- **Deployment:** Vercel
 
 ## Projektstruktur
 
@@ -68,9 +66,10 @@ PAVAWS/
 ├── src/
 │   ├── components/
 │   ├── pages/
-│   ├── services/
-│   ├── App.js
-│   ├── index.js
+│   ├── store/
+│   ├── App.jsx
+│   ├── index.css
+│   ├── main.jsx
 │   └── ...
 ├── .gitignore
 ├── package.json
