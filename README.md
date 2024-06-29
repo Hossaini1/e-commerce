@@ -51,9 +51,10 @@ Das 'PAVAWS' E-Commerce Projekt ist eine umfassende Online-Shopping-Plattform, e
 
 ## Technologie-Stack
 
-- **Frontend:** React.js
-- **Styling:** CSS, Tailwindcss
-- **Deployment:** Vercel
+- **Frontend:** [React.js](https://reactjs.org/)
+  - **Buildtools:** [Vite](https://vitejs.dev/)
+- **Styling:** CSS, [Tailwind CSS](https://tailwindcss.com/)
+- **Deployment:** [Vercel](https://vercel.com/)
 
 ## Projektstruktur
 
